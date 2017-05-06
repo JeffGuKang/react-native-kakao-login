@@ -14,21 +14,14 @@
  * limitations under the License.
  */
 
-#import "KOError.h"
-#import "KOImages.h"
-#import "KOLoginButton.h"
-#import "KOAppCall.h"
-#import "KOSession.h"
-#import "KOUtils.h"
-#import "KOAgeAuthQueryStringBuilder.h"
+#import <Foundation/Foundation.h>
 
-#import "KOSessionTask+UserManagementAPI.h"
-#import "KOSessionTask+TalkAPI.h"
-#import "KOSessionTask+StoryAPI.h"
-#import "KOSessionTask+PushAPI.h"
-#import "KOSessionTask+TokenAPI.h"
-#import "KOSessionTask+FriendAPI.h"
-#import "KOSessionTask+AgeAuthAPI.h"
-#import "KOSessionTask+StorageAPI.h"
+@interface NSDictionary (SafeValue)
 
-#define KAKAO_SDK_IOS_VERSION_STRING @"1.2.3"
+- (id)safeValueForKey:(NSString *)key;
+- (id)safeObjectForKey:(NSString *)key;
+- (NSNumber *)safeNumberForKey:(NSString *)key;
+- (NSNumber *)safeNumberForKey:(NSString *)key floatingPoint:(BOOL)floatingPoint;
+- (NSDictionary *)safeValueDictionary;
+
+@end

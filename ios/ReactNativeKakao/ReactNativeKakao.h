@@ -6,6 +6,7 @@
 //  Copyright © 2017 Jeff Gu Kang. All rights reserved.
 //
 
+#import <KakaoOpenSDK/KakaoOpenSDK.h>
 #import <React/RCTBridgeModule.h>
 
 @interface ReactNativeKakao : NSObject <RCTBridgeModule>
