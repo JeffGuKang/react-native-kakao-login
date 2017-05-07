@@ -20,10 +20,10 @@ RCT_REMAP_METHOD(login,
 		[[KOSession sharedSession] close];
 		[[KOSession sharedSession] openWithCompletionHandler:^(NSError *error) {
 			if(error) {
-			   reject(@"RNK: LOGIN FAILED", @"faild", error);
-			   return;
+				reject(@"RNK: LOGIN FAILED", @"faild", error);
+				return;
 			}
-
+			
 			if ([[KOSession sharedSession] isOpen]) {
 				// [self loginProcessResolve:resolve rejecter:reject];
 			} else {

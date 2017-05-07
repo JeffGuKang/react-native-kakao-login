@@ -7,79 +7,87 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CC570EF71EAD219C009D7292 /* ReactNativeKakao.m in Sources */ = {isa = PBXBuildFile; fileRef = CC570EF61EAD219C009D7292 /* ReactNativeKakao.m */; };
-		CC9ED4F31EBF135400F9C62A /* ReactNativeKakao.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CC570EF51EAD219C009D7292 /* ReactNativeKakao.h */; };
-		CC9ED62E1EBF205F00F9C62A /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9ED6021EBF1F0700F9C62A /* KakaoOpenSDK.framework */; };
+		CC4BCC9F1EBF2F55005E637B /* ReactNativeKakao.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4BCC9E1EBF2F55005E637B /* ReactNativeKakao.m */; };
+		CC4BCCA01EBF2F55005E637B /* ReactNativeKakao.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CC4BCC9D1EBF2F55005E637B /* ReactNativeKakao.h */; };
+		CC4BCCA81EBF2F92005E637B /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC4BCCA71EBF2F92005E637B /* KakaoOpenSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		CC570EF01EAD219C009D7292 /* CopyFiles */ = {
+		CC4BCC981EBF2F55005E637B /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 2147483647;
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				CC9ED4F31EBF135400F9C62A /* ReactNativeKakao.h in CopyFiles */,
+				CC4BCCA01EBF2F55005E637B /* ReactNativeKakao.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CC570EF21EAD219C009D7292 /* libReactNativeKakao.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libReactNativeKakao.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		CC570EF51EAD219C009D7292 /* ReactNativeKakao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactNativeKakao.h; sourceTree = "<group>"; };
-		CC570EF61EAD219C009D7292 /* ReactNativeKakao.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactNativeKakao.m; sourceTree = "<group>"; };
-		CC9ED6021EBF1F0700F9C62A /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
+		CC4BCC9A1EBF2F55005E637B /* libReactNativeKakao.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libReactNativeKakao.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC4BCC9D1EBF2F55005E637B /* ReactNativeKakao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactNativeKakao.h; sourceTree = "<group>"; };
+		CC4BCC9E1EBF2F55005E637B /* ReactNativeKakao.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactNativeKakao.m; sourceTree = "<group>"; };
+		CC4BCCA71EBF2F92005E637B /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		CC570EEF1EAD219C009D7292 /* Frameworks */ = {
+		CC4BCC971EBF2F55005E637B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC9ED62E1EBF205F00F9C62A /* KakaoOpenSDK.framework in Frameworks */,
+				CC4BCCA81EBF2F92005E637B /* KakaoOpenSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CC570EE91EAD219C009D7292 = {
+		CC4BCC911EBF2F55005E637B = {
 			isa = PBXGroup;
 			children = (
-				CC9ED6021EBF1F0700F9C62A /* KakaoOpenSDK.framework */,
-				CC570EF41EAD219C009D7292 /* ReactNativeKakao */,
-				CC570EF31EAD219C009D7292 /* Products */,
+				CC4BCCA61EBF2F82005E637B /* Frameworks */,
+				CC4BCC9C1EBF2F55005E637B /* ReactNativeKakao */,
+				CC4BCC9B1EBF2F55005E637B /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		CC570EF31EAD219C009D7292 /* Products */ = {
+		CC4BCC9B1EBF2F55005E637B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CC570EF21EAD219C009D7292 /* libReactNativeKakao.a */,
+				CC4BCC9A1EBF2F55005E637B /* libReactNativeKakao.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CC570EF41EAD219C009D7292 /* ReactNativeKakao */ = {
+		CC4BCC9C1EBF2F55005E637B /* ReactNativeKakao */ = {
 			isa = PBXGroup;
 			children = (
-				CC570EF51EAD219C009D7292 /* ReactNativeKakao.h */,
-				CC570EF61EAD219C009D7292 /* ReactNativeKakao.m */,
+				CC4BCC9D1EBF2F55005E637B /* ReactNativeKakao.h */,
+				CC4BCC9E1EBF2F55005E637B /* ReactNativeKakao.m */,
 			);
 			path = ReactNativeKakao;
+			sourceTree = "<group>";
+		};
+		CC4BCCA61EBF2F82005E637B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CC4BCCA71EBF2F92005E637B /* KakaoOpenSDK.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CC570EF11EAD219C009D7292 /* ReactNativeKakao */ = {
+		CC4BCC991EBF2F55005E637B /* ReactNativeKakao */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CC570EFB1EAD219C009D7292 /* Build configuration list for PBXNativeTarget "ReactNativeKakao" */;
+			buildConfigurationList = CC4BCCA31EBF2F55005E637B /* Build configuration list for PBXNativeTarget "ReactNativeKakao" */;
 			buildPhases = (
-				CC570EEE1EAD219C009D7292 /* Sources */,
-				CC570EEF1EAD219C009D7292 /* Frameworks */,
-				CC570EF01EAD219C009D7292 /* CopyFiles */,
+				CC4BCC961EBF2F55005E637B /* Sources */,
+				CC4BCC971EBF2F55005E637B /* Frameworks */,
+				CC4BCC981EBF2F55005E637B /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -87,59 +95,60 @@
 			);
 			name = ReactNativeKakao;
 			productName = ReactNativeKakao;
-			productReference = CC570EF21EAD219C009D7292 /* libReactNativeKakao.a */;
+			productReference = CC4BCC9A1EBF2F55005E637B /* libReactNativeKakao.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		CC570EEA1EAD219C009D7292 /* Project object */ = {
+		CC4BCC921EBF2F55005E637B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = jeffgukang;
 				TargetAttributes = {
-					CC570EF11EAD219C009D7292 = {
-						CreatedOnToolsVersion = 8.2.1;
+					CC4BCC991EBF2F55005E637B = {
+						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = Y6GC6TMAJ2;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = CC570EED1EAD219C009D7292 /* Build configuration list for PBXProject "ReactNativeKakao" */;
+			buildConfigurationList = CC4BCC951EBF2F55005E637B /* Build configuration list for PBXProject "ReactNativeKakao" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = CC570EE91EAD219C009D7292;
-			productRefGroup = CC570EF31EAD219C009D7292 /* Products */;
+			mainGroup = CC4BCC911EBF2F55005E637B;
+			productRefGroup = CC4BCC9B1EBF2F55005E637B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CC570EF11EAD219C009D7292 /* ReactNativeKakao */,
+				CC4BCC991EBF2F55005E637B /* ReactNativeKakao */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		CC570EEE1EAD219C009D7292 /* Sources */ = {
+		CC4BCC961EBF2F55005E637B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC570EF71EAD219C009D7292 /* ReactNativeKakao.m in Sources */,
+				CC4BCC9F1EBF2F55005E637B /* ReactNativeKakao.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		CC570EF91EAD219C009D7292 /* Debug */ = {
+		CC4BCCA11EBF2F55005E637B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -175,18 +184,19 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
-		CC570EFA1EAD219C009D7292 /* Release */ = {
+		CC4BCCA21EBF2F55005E637B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -216,25 +226,20 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		CC570EFC1EAD219C009D7292 /* Debug */ = {
+		CC4BCCA41EBF2F55005E637B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				DEVELOPMENT_TEAM = Y6GC6TMAJ2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-				);
-				HEADER_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/**",
-					"$(SRCROOT)/**",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -245,18 +250,13 @@
 			};
 			name = Debug;
 		};
-		CC570EFD1EAD219C009D7292 /* Release */ = {
+		CC4BCCA51EBF2F55005E637B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				DEVELOPMENT_TEAM = Y6GC6TMAJ2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-				);
-				HEADER_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/**",
-					"$(SRCROOT)/**",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -270,25 +270,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CC570EED1EAD219C009D7292 /* Build configuration list for PBXProject "ReactNativeKakao" */ = {
+		CC4BCC951EBF2F55005E637B /* Build configuration list for PBXProject "ReactNativeKakao" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CC570EF91EAD219C009D7292 /* Debug */,
-				CC570EFA1EAD219C009D7292 /* Release */,
+				CC4BCCA11EBF2F55005E637B /* Debug */,
+				CC4BCCA21EBF2F55005E637B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CC570EFB1EAD219C009D7292 /* Build configuration list for PBXNativeTarget "ReactNativeKakao" */ = {
+		CC4BCCA31EBF2F55005E637B /* Build configuration list for PBXNativeTarget "ReactNativeKakao" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CC570EFC1EAD219C009D7292 /* Debug */,
-				CC570EFD1EAD219C009D7292 /* Release */,
+				CC4BCCA41EBF2F55005E637B /* Debug */,
+				CC4BCCA51EBF2F55005E637B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = CC570EEA1EAD219C009D7292 /* Project object */;
+	rootObject = CC4BCC921EBF2F55005E637B /* Project object */;
 }
