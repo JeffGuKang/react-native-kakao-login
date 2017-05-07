@@ -25,7 +25,7 @@ RCT_REMAP_METHOD(login,
 			}
 
 			if ([[KOSession sharedSession] isOpen]) {
-				[self loginProcessResolve:resolve rejecter:reject];
+				// [self loginProcessResolve:resolve rejecter:reject];
 			} else {
 				// failed
 				NSLog(@"login canceled.");

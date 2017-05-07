@@ -7,29 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CC075D9A1EBE1EBD00B5F930 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC075D991EBE1EBD00B5F930 /* KakaoOpenSDK.framework */; };
 		CC570EF71EAD219C009D7292 /* ReactNativeKakao.m in Sources */ = {isa = PBXBuildFile; fileRef = CC570EF61EAD219C009D7292 /* ReactNativeKakao.m */; };
-		CC570EF81EAD219C009D7292 /* ReactNativeKakao.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CC570EF51EAD219C009D7292 /* ReactNativeKakao.h */; };
+		CC9ED4F31EBF135400F9C62A /* ReactNativeKakao.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CC570EF51EAD219C009D7292 /* ReactNativeKakao.h */; };
+		CC9ED62E1EBF205F00F9C62A /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9ED6021EBF1F0700F9C62A /* KakaoOpenSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		CC570EF01EAD219C009D7292 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				CC570EF81EAD219C009D7292 /* ReactNativeKakao.h in CopyFiles */,
+				CC9ED4F31EBF135400F9C62A /* ReactNativeKakao.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CC075D991EBE1EBD00B5F930 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KakaoOpenSDK.framework; path = ReactNativeKakao/KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		CC570EF21EAD219C009D7292 /* libReactNativeKakao.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libReactNativeKakao.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC570EF51EAD219C009D7292 /* ReactNativeKakao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactNativeKakao.h; sourceTree = "<group>"; };
 		CC570EF61EAD219C009D7292 /* ReactNativeKakao.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactNativeKakao.m; sourceTree = "<group>"; };
+		CC9ED6021EBF1F0700F9C62A /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,7 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC075D9A1EBE1EBD00B5F930 /* KakaoOpenSDK.framework in Frameworks */,
+				CC9ED62E1EBF205F00F9C62A /* KakaoOpenSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,7 +47,7 @@
 		CC570EE91EAD219C009D7292 = {
 			isa = PBXGroup;
 			children = (
-				CC075D991EBE1EBD00B5F930 /* KakaoOpenSDK.framework */,
+				CC9ED6021EBF1F0700F9C62A /* KakaoOpenSDK.framework */,
 				CC570EF41EAD219C009D7292 /* ReactNativeKakao */,
 				CC570EF31EAD219C009D7292 /* Products */,
 			);
@@ -226,18 +226,20 @@
 		CC570EFC1EAD219C009D7292 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				DEVELOPMENT_TEAM = Y6GC6TMAJ2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/KakaoSDK",
-					"$(PROJECT_DIR)/ReactNativeKakao",
 				);
 				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/**",
+					"$(SRCROOT)/**",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -246,18 +248,20 @@
 		CC570EFD1EAD219C009D7292 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				DEVELOPMENT_TEAM = Y6GC6TMAJ2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/KakaoSDK",
-					"$(PROJECT_DIR)/ReactNativeKakao",
 				);
 				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/**",
+					"$(SRCROOT)/**",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
