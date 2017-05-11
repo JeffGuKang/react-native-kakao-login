@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -24,8 +23,8 @@
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
-		AF5FBA12434C439FBCACA660 /* libReactNativeKakao.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90E4DC72A2640FDB7C484BE /* libReactNativeKakao.a */; };
 		CCD910731EBF39B60081E13A /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCD910721EBF39B60081E13A /* KakaoOpenSDK.framework */; };
+		525D66F5AFB144FD8CCA5A96 /* libReactNativeKakao.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 959726511CDD4F81903BC008 /* libReactNativeKakao.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -211,13 +210,6 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
-		CCD9104A1EBF34620081E13A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 931515EB28F348AE9CB04BB3 /* ReactNativeKakao.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = CC4BCC9A1EBF2F55005E637B;
-			remoteInfo = ReactNativeKakao;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -243,9 +235,9 @@
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
-		931515EB28F348AE9CB04BB3 /* ReactNativeKakao.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeKakao.xcodeproj; path = "../node_modules/react-native-kakao/ios/ReactNativeKakao.xcodeproj"; sourceTree = "<group>"; };
-		C90E4DC72A2640FDB7C484BE /* libReactNativeKakao.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libReactNativeKakao.a; sourceTree = "<group>"; };
 		CCD910721EBF39B60081E13A /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
+		CD2FE9BD90CD48F5AFDD6A0D /* ReactNativeKakao.xcodeproj */ = {isa = PBXFileReference; name = "ReactNativeKakao.xcodeproj"; path = "../node_modules/react-native-kakao/ios/ReactNativeKakao.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		959726511CDD4F81903BC008 /* libReactNativeKakao.a */ = {isa = PBXFileReference; name = "libReactNativeKakao.a"; path = "libReactNativeKakao.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,7 +265,7 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				AF5FBA12434C439FBCACA660 /* libReactNativeKakao.a in Frameworks */,
+				525D66F5AFB144FD8CCA5A96 /* libReactNativeKakao.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,7 +410,7 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
-				931515EB28F348AE9CB04BB3 /* ReactNativeKakao.xcodeproj */,
+				CD2FE9BD90CD48F5AFDD6A0D /* ReactNativeKakao.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -450,14 +442,6 @@
 			children = (
 				13B07F961A680F5B00A75B9A /* ReactNativeKakaoExample.app */,
 				00E356EE1AD99517003FC87E /* ReactNativeKakaoExampleTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		CCD9102E1EBF34620081E13A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				CCD9104B1EBF34620081E13A /* libReactNativeKakao.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -574,10 +558,6 @@
 				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
-				},
-				{
-					ProductGroup = CCD9102E1EBF34620081E13A /* Products */;
-					ProjectRef = 931515EB28F348AE9CB04BB3 /* ReactNativeKakao.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -762,13 +742,6 @@
 			fileType = archive.ar;
 			path = libRCTText.a;
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CCD9104B1EBF34620081E13A /* libReactNativeKakao.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libReactNativeKakao.a;
-			remoteRef = CCD9104A1EBF34620081E13A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

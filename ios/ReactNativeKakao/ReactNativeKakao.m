@@ -19,6 +19,8 @@ RCT_ENUM_CONVERTER(KOAuthType, (@{ @"KOAuthTypeTalk" : @(KOAuthTypeTalk),
 
 @implementation ReactNativeKakao
 
+RCT_EXPORT_MODULE();
+
 - (NSDictionary *)constantsToExport
 {
 	return @{ @"KOAuthTypeTalk" : @(KOAuthTypeTalk),
@@ -26,10 +28,8 @@ RCT_ENUM_CONVERTER(KOAuthType, (@{ @"KOAuthTypeTalk" : @(KOAuthTypeTalk),
 						@"KOAuthTypeAccount" : @(KOAuthTypeAccount) };
 };
 
-RCT_EXPORT_MODULE();
-
 RCT_REMAP_METHOD(login,
-								 authTypes: (NSArray* )authTypes
+				 authTypes: (NSArray* )authTypes
 				 resolver:(RCTPromiseResolveBlock)resolve
 				 rejecter:(RCTPromiseRejectBlock)reject)
 {
@@ -40,13 +40,13 @@ RCT_REMAP_METHOD(login,
 				reject(@"RNKakao", @"login faild", error);
 				return;
 			}
-			
+
 			if ([[KOSession sharedSession] isOpen]) {
 				[self loginResolve:resolve rejecter:reject];
 			} else {
 				reject(@"RNKakao", @"login canceled", nil);
 			}
-		} authParams:nil authTypes:authTypes];
+		} authParams:nil authTypes:(authTypes != nil) ? authTypes : @[@(KOAuthTypeTalk), @(KOAuthTypeStory), @(KOAuthTypeAccount)]];
 	});
 }
 
