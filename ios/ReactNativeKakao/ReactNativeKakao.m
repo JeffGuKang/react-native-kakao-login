@@ -7,12 +7,29 @@
 //
 
 #import "ReactNativeKakao.h"
+#import <React/RCTConvert.h>
+
+@implementation RCTConvert (KOAuthType)
+RCT_ENUM_CONVERTER(KOAuthType, (@{ @"KOAuthTypeTalk" : @(KOAuthTypeTalk),
+																						 @"KOAuthTypeStory" : @(KOAuthTypeStory),
+																						 @"KOAuthTypeAccount" : @(KOAuthTypeAccount)}),
+									 KOAuthTypeTalk, integerValue)
+@end
+
 
 @implementation ReactNativeKakao
+
+- (NSDictionary *)constantsToExport
+{
+	return @{ @"KOAuthTypeTalk" : @(KOAuthTypeTalk),
+						@"KOAuthTypeStory" : @(KOAuthTypeStory),
+						@"KOAuthTypeAccount" : @(KOAuthTypeAccount) };
+};
 
 RCT_EXPORT_MODULE();
 
 RCT_REMAP_METHOD(login,
+								 authTypes: (NSArray* )authTypes
 				 resolver:(RCTPromiseResolveBlock)resolve
 				 rejecter:(RCTPromiseRejectBlock)reject)
 {
@@ -20,20 +37,29 @@ RCT_REMAP_METHOD(login,
 		[[KOSession sharedSession] close];
 		[[KOSession sharedSession] openWithCompletionHandler:^(NSError *error) {
 			if(error) {
-				reject(@"RNK: LOGIN FAILED", @"faild", error);
+				reject(@"RNKakao", @"login faild", error);
 				return;
 			}
 			
 			if ([[KOSession sharedSession] isOpen]) {
-				// [self loginProcessResolve:resolve rejecter:reject];
+				[self loginResolve:resolve rejecter:reject];
 			} else {
-				// failed
-				NSLog(@"login canceled.");
-				//NSError *error = [NSError errorWithDomain:@"kakaologin" code:1 userInfo:nil];
-				reject(@"RNK: LOGIN CANCELED", @"canceled", nil);
+				reject(@"RNKakao", @"login canceled", nil);
 			}
-		}];
+		} authParams:nil authTypes:authTypes];
 	});
 }
 
+- (void)loginResolve:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject {
+	[KOSessionTask meTaskWithCompletionHandler:^(KOUser* result, NSError *error) {
+		if (result) {
+			// success
+			NSDictionary *response = @{@"user": result};
+			resolve(response);
+		} else {
+			// failed
+			reject(@"RNKakao", @"login error", error);
+		}
+	}];
+}
 @end
