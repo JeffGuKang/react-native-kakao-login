@@ -12,19 +12,22 @@ import {
   TouchableOpacity,
   Image,
 } from 'react-native';
-import RCTKakao from 'react-native-kakao';
+import RNKakao from 'react-native-kakao';
 
 export default class ReactNativeKakaoExample extends Component {
 
   _kakaoLogin() {
-    console.log(RCTKakao.KOAuthTypeAccount);
-    let authTypes = [1, 2, 3];
+    let authTypes = [RNKakao.KOAuthTypeTalk, RNKakao.KOAuthTypeStory, RNKakao.KOAuthTypeAccount];
 
-    RCTKakao.login(null)
+    console.log(RNKakao.KOAuthTypeTalk);
+
+    RNKakao.login(authTypes)
     .then(result => {
+      console.log("Result");
       console.log(result);
     })
     .catch(error => {
+      console.log("Error");
       console.log(error);
     })
   }
@@ -79,8 +82,6 @@ const styles = StyleSheet.create({
   },
   kakaoButton: {
     width: 200,
-    height: 50,
-    backgroundColor: 'blue',
   }
 });
 
