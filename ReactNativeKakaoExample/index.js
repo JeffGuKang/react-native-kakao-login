@@ -11,10 +11,19 @@ import {
   View,
   TouchableOpacity,
   Image,
+  TextInput,
 } from 'react-native';
 import RNKakao from 'react-native-kakao';
 
 export default class ReactNativeKakaoExample extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      userInfo: ''
+    };
+  }
 
   _kakaoLogin() {
     let authTypes = [RNKakao.KOAuthTypeTalk, RNKakao.KOAuthTypeStory, RNKakao.KOAuthTypeAccount];
@@ -25,6 +34,9 @@ export default class ReactNativeKakaoExample extends Component {
     .then(result => {
       console.log("Result");
       console.log(result);
+      this.setState({
+        userInfo: JSON.stringify(result)
+      });
     })
     .catch(error => {
       console.log("Error");
@@ -40,10 +52,10 @@ export default class ReactNativeKakaoExample extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Hello to React Native!
+          React Native Kakao
         </Text>
         <Text style={styles.instructions}>
-          To get started, edit index.ios.js
+          To get started, edit index.js
         </Text>
         <Text style={styles.instructions}>
           Press Cmd+R to reload,{'\n'}
@@ -58,6 +70,18 @@ export default class ReactNativeKakaoExample extends Component {
             source={require('./assets/images/kakao_login_btn.png')}
           />
         </TouchableOpacity>
+
+        <View style={{width: '80%', alignItems: 'center'}}>
+          <Text>UserInfo</Text>
+          <TextInput
+            style={styles.userInfo}
+            pointerEvents="none"
+            multiline={true}
+            numberOfLines={6}
+            value={this.state.userInfo}/>
+        </View>
+
+
       </View>
     );
   }
@@ -66,6 +90,7 @@ export default class ReactNativeKakaoExample extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection:'column',
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
@@ -82,6 +107,11 @@ const styles = StyleSheet.create({
   },
   kakaoButton: {
     width: 200,
+  },
+  userInfo: {
+    top: 10,
+    backgroundColor: 'grey',
+    height: 130,
   }
 });
 
