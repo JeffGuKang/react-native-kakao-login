@@ -22,12 +22,12 @@ Auto install is supported by npm.
 
 [Officail Kakao](https://developers.kakao.com/docs/ios#시작하기-개발환경)
 
-1. Install Kakao SDK
+- Install Kakao SDK
+
   1. Download [latest SDK](https://developers.kakao.com/sdk/latest-ios-sdk)
 
   2. Drag and drop framework.
     ![Drag&Drop](https://developers.kakao.com/assets/images/ios/drag_sdk.png)
-
     ![Settings](https://developers.kakao.com/assets/images/ios/drag_sdk_dialog.png)
 
   3. Check target settings
@@ -36,9 +36,11 @@ Auto install is supported by npm.
   4. Add a argument `-all_load` in `Other Linker Flags`.
     ![argument](https://developers.kakao.com/assets/images/ios/other_linker_flags.png)
 
-2. Register your application in Kakao.
+- Register your application in Kakao.
   [Official](https://developers.kakao.com/docs/ios#시작하기-앱-생성)
-  1. [Make new app](https://developers.kakao.com/apps/new)
+
+  1. Make new app
+    [Make new app](https://developers.kakao.com/apps/new)
     ![makeapp](https://developers.kakao.com/assets/images/dashboard/dev_017.png)
 
   2. Add iOS platform
@@ -46,7 +48,8 @@ Auto install is supported by npm.
 
     iOS bundle id must same with XCode project's Bundle Identifier.
 
-3. App settings in project
+- App settings in project
+
   1. Add URL types
     Add `kakao<yourappId>` in URL Schemes
     ![url types](https://developers.kakao.com/assets/images/ios/url_types.png)
