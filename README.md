@@ -16,50 +16,6 @@ Auto install is supported by npm.
   npm link react-native-kakao
 ```
 
-## Project setup and initialization
-
-### iOS
-
-[Officail Kakao](https://developers.kakao.com/docs/ios#시작하기-개발환경)
-
-- Install Kakao SDK
-
-  1. Download [latest SDK](https://developers.kakao.com/sdk/latest-ios-sdk)
-
-  2. Drag and drop framework.
-    ![Drag&Drop](https://developers.kakao.com/assets/images/ios/drag_sdk.png)
-    ![Settings](https://developers.kakao.com/assets/images/ios/drag_sdk_dialog.png)
-
-  3. Check target settings
-    ![build phase](https://developers.kakao.com/assets/images/ios/link_binary_with_libraries_confirm.png)
-
-  4. Add a argument `-all_load` in `Other Linker Flags`.
-    ![argument](https://developers.kakao.com/assets/images/ios/other_linker_flags.png)
-
-- Register your application in Kakao.
-  [Official](https://developers.kakao.com/docs/ios#시작하기-앱-생성)
-
-  1. Make new app
-    [Make new app](https://developers.kakao.com/apps/new)
-    ![makeapp](https://developers.kakao.com/assets/images/dashboard/dev_017.png)
-
-  2. Add iOS platform
-    ![addios](https://developers.kakao.com/assets/images/dashboard/dev_018.png)
-
-    iOS bundle id must same with XCode project's Bundle Identifier.
-
-- App settings in project
-
-  1. Add URL types
-    Add `kakao<yourappId>` in URL Schemes
-    ![url types](https://developers.kakao.com/assets/images/ios/url_types.png)
-
-    Add native app key in plist
-    ![addkakaoid](https://developers.kakao.com/assets/images/ios/setting_plist.png)
-
-### Android
-(...ing)
-
 ## Public APIs
 
 ```js
@@ -112,6 +68,49 @@ This is the typical information you obtain once the user sign in:
     profileImageThumnail: <user picture profile thumnail url>    
   }
 ```
+
+## Project setup and initialization
+
+### iOS
+
+[Officail Kakao](https://developers.kakao.com/docs/ios#시작하기-개발환경)
+
+- Install Kakao SDK
+
+  1. Download [latest SDK](https://developers.kakao.com/sdk/latest-ios-sdk)
+
+  2. Drag and drop framework.
+    ![Drag&Drop](https://developers.kakao.com/assets/images/ios/drag_sdk.png)
+    ![Settings](https://developers.kakao.com/assets/images/ios/drag_sdk_dialog.png)
+
+  3. Check target settings
+    ![build phase](https://developers.kakao.com/assets/images/ios/link_binary_with_libraries_confirm.png)
+
+  4. Add a argument `-all_load` in `Other Linker Flags`.
+    ![argument](https://developers.kakao.com/assets/images/ios/other_linker_flags.png)
+
+- Register your application in Kakao.
+  [Official](https://developers.kakao.com/docs/ios#시작하기-앱-생성)
+
+  1. Make new app
+    [Make new app](https://developers.kakao.com/apps/new)
+    ![makeapp](https://developers.kakao.com/assets/images/dashboard/dev_017.png)
+
+  2. Add iOS platform
+    ![addios](https://developers.kakao.com/assets/images/dashboard/dev_018.png)
+
+    iOS bundle id must same with XCode project's Bundle Identifier.
+
+- App settings in project
+
+  1. Add URL types
+    Add `kakao<yourappId>` in URL Schemes
+    ![url types](https://developers.kakao.com/assets/images/ios/url_types.png)    
+    Add native app key in plist
+    ![addkakaoid](https://developers.kakao.com/assets/images/ios/setting_plist.png)
+
+### Android
+(...ing)
 
 ## Licence
 (MIT)
