@@ -106,7 +106,8 @@ This is the typical information you obtain once the user sign in:
   1. Add URL types
     Add `kakao<yourappId>` in URL Schemes
     ![url types](https://developers.kakao.com/assets/images/ios/url_types.png)    
-    Add native app key in plist
+
+  2. Add native app key in plist
     ![addkakaoid](https://developers.kakao.com/assets/images/ios/setting_plist.png)
 
 ### Android
