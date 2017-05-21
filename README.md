@@ -4,7 +4,7 @@ Supported operating systems are >= Android 4.1 (API 16) and >= iOS 9.0.
 
 ## Introduction
 
-React Native module for using kakao sdk
+React Native module for using kakao sdk.
 
 ## Installation
 
