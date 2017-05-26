@@ -110,6 +110,37 @@ This is the typical information you obtain once the user sign in:
   2. Add native app key in plist
     ![addkakaoid](https://developers.kakao.com/assets/images/ios/setting_plist.png)
 
+- Add codes to `AppDelegate.m`
+  ```
+  - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+                                         sourceApplication:(NSString *)sourceApplication
+                                                annotation:(id)annotation {
+      ...
+      if ([KOSession isKakaoAccountLoginCallback:url]) {
+          return [KOSession handleOpenURL:url];
+      }
+
+      return NO;
+      ...
+  }
+
+  - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+                                                   options:(NSDictionary<NSString *,id> *)options {
+      ...
+      if ([KOSession isKakaoAccountLoginCallback:url]) {
+          return [KOSession handleOpenURL:url];
+      }
+
+      return NO;
+      ...    
+  }
+
+  - (void)applicationDidBecomeActive:(UIApplication *)application
+  {
+      [KOSession handleDidBecomeActive];
+  }
+  ```
+
 ### Android
 (...ing)
 
