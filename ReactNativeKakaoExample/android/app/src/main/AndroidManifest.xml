@@ -29,4 +29,8 @@
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
     </application>
 
+    <resources>
+      <string name="kakao_app_key">c51d03109bf1e220198fc7a59c229d8a</string>
+    </resources>
+
 </manifest>

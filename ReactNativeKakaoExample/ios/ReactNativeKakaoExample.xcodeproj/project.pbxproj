@@ -24,7 +24,7 @@
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		CCD910731EBF39B60081E13A /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCD910721EBF39B60081E13A /* KakaoOpenSDK.framework */; };
-		C2A3DB69B9AB42A99E7E78A0 /* libReactNativeKakao.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF29CD68951B4F7095988C68 /* libReactNativeKakao.a */; };
+		3C3AFA72720E4E28838A1F1A /* libReactNativeKakao.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90BD2E567C4D404E8BCF8475 /* libReactNativeKakao.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -236,8 +236,8 @@
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		CCD910721EBF39B60081E13A /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
-		22240D45EAC746578960A424 /* ReactNativeKakao.xcodeproj */ = {isa = PBXFileReference; name = "ReactNativeKakao.xcodeproj"; path = "../node_modules/react-native-kakao/ios/ReactNativeKakao.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		CF29CD68951B4F7095988C68 /* libReactNativeKakao.a */ = {isa = PBXFileReference; name = "libReactNativeKakao.a"; path = "libReactNativeKakao.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		5FB1D5A7EE40422ABD678E25 /* ReactNativeKakao.xcodeproj */ = {isa = PBXFileReference; name = "ReactNativeKakao.xcodeproj"; path = "../node_modules/react-native-kakao/ios/ReactNativeKakao.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		90BD2E567C4D404E8BCF8475 /* libReactNativeKakao.a */ = {isa = PBXFileReference; name = "libReactNativeKakao.a"; path = "libReactNativeKakao.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,7 +265,7 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				C2A3DB69B9AB42A99E7E78A0 /* libReactNativeKakao.a in Frameworks */,
+				3C3AFA72720E4E28838A1F1A /* libReactNativeKakao.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,7 +410,7 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
-				22240D45EAC746578960A424 /* ReactNativeKakao.xcodeproj */,
+				5FB1D5A7EE40422ABD678E25 /* ReactNativeKakao.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";

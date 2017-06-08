@@ -1,4 +1,4 @@
-package com.gettipsi.boilerplate;
+package com.jeffgukang.reactnativekakao;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class RNBoilerplateReactPackage implements ReactPackage {
+public class ReactNativeKakaoReactPackage implements ReactPackage {
 
   @Override
   public List<Class<? extends JavaScriptModule>> createJSModules() {
@@ -26,7 +26,7 @@ public class RNBoilerplateReactPackage implements ReactPackage {
   @Override
   public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
     List<NativeModule> modules = new ArrayList<>();
-    modules.add(new RNBoilerplateModule(reactContext));
+    modules.add(new ReactNativeKakaoModule(reactContext));
     return modules;
   }
 }
