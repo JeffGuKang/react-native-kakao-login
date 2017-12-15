@@ -30,10 +30,11 @@ export default class ReactNativeKakaoExample extends Component {
 
     console.log(RNKakao.KOAuthTypeTalk);
 
-    RNKakao.login(authTypes)
+    RNKakao.login(null)
     .then(result => {
       console.log("Result");
       console.log(result);
+      alert(JSON.stringify(result));
       this.setState({
         userInfo: JSON.stringify(result)
       });
@@ -71,14 +72,15 @@ export default class ReactNativeKakaoExample extends Component {
           />
         </TouchableOpacity>
 
-        <View style={{width: '80%', alignItems: 'center'}}>
-          <Text>UserInfo</Text>
+        <Text>UserInfo</Text>
+
+        <View style={{height: '30%',width: '80%', alignItems: 'center', backgroundColor: 'grey'}}>
           <TextInput
             style={styles.userInfo}
             pointerEvents="none"
             multiline={true}
             numberOfLines={6}
-            value={this.state.userInfo}/>
+            value={this.state.userInfo || 'Information'}/>
         </View>
 
 
@@ -109,8 +111,8 @@ const styles = StyleSheet.create({
     width: 200,
   },
   userInfo: {
-    top: 10,
-    backgroundColor: 'grey',
-    height: 130,
+    flex: 1,
+    width: '80%',
+    height: 150,
   }
 });
