@@ -57,3 +57,4 @@ node_modules
 /coverage
 /third-party
 yarn.lock
+package-lock.json
