@@ -120,8 +120,7 @@ This is the typical information you obtain once the user sign in:
           return [KOSession handleOpenURL:url];
       }
 
-      return NO;
-      ...
+      return NO;      
   }
 
   - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
@@ -131,8 +130,7 @@ This is the typical information you obtain once the user sign in:
           return [KOSession handleOpenURL:url];
       }
 
-      return NO;
-      ...    
+      return NO;    
   }
 
   - (void)applicationDidBecomeActive:(UIApplication *)application
@@ -143,6 +141,15 @@ This is the typical information you obtain once the user sign in:
 
 ### Android
 (...ing)
+
+### Troubleshooting
+  `compile group: 'com.kakao.sdk', name: 'usermgmt', version: '1.1.36'`
+
+   1.2 버전 이상에서는 빌드가 되지 않는다.
+   최신버전(1.3) 을 사용하기 위해서
+   - Gradle 2.14.1
+   - Android Gradle Plugin 2.2.3
+   이상을 사용하기를 권장한다.
 
 ## Licence
 (MIT)

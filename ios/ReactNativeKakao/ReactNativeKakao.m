@@ -10,10 +10,11 @@
 #import <React/RCTConvert.h>
 
 @implementation RCTConvert (KOAuthType)
-RCT_ENUM_CONVERTER(KOAuthType, (@{ @"KOAuthTypeTalk" : @(KOAuthTypeTalk),
-																						 @"KOAuthTypeStory" : @(KOAuthTypeStory),
-																						 @"KOAuthTypeAccount" : @(KOAuthTypeAccount)}),
-									 KOAuthTypeTalk, integerValue)
+RCT_ENUM_CONVERTER(KOAuthType, (@{
+								  @"KOAuthTypeTalk" : @(KOAuthTypeTalk),
+								  @"KOAuthTypeStory" : @(KOAuthTypeStory),
+								  @"KOAuthTypeAccount" : @(KOAuthTypeAccount)
+								}), KOAuthTypeTalk, integerValue)
 @end
 
 
@@ -39,27 +40,29 @@ RCT_REMAP_METHOD(login,
 {
 	dispatch_async(dispatch_get_main_queue(), ^{
 		[[KOSession sharedSession] close];
+		NSArray *auths = (authTypes != nil) ? authTypes : @[@(KOAuthTypeTalk), @(KOAuthTypeStory), @(KOAuthTypeAccount)];
+//		- (void)openWithCompletionHandler:(KOSessionCompletionHandler)completionHandler authTypes:(NSArray<NSNumber *> *)authTypes;
 		[[KOSession sharedSession] openWithCompletionHandler:^(NSError *error) {
 			NSLog(@"MYLOG: openWithCompletionHandler");
-
+			
 			if(error) {
 				NSLog(@"Error: %@", error.description);
 				NSLog(@"%@", error.description);
-
+				
 				reject(@"RNKakao", @"login error", error);
 				return;
 			}
-
+			
 			if ([[KOSession sharedSession] isOpen]) {
 				NSLog(@"sharedSession is open");
-
+				
 				[self userInfoRequestResolve:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject];
 				return;
 			} else {
 				reject(@"RNKakao", @"login canceled", nil);
 				return;
 			}
-		} authParams:nil authTypes:(authTypes != nil) ? authTypes : @[@(KOAuthTypeTalk), @(KOAuthTypeStory), @(KOAuthTypeAccount)]];
+		} authTypes:auths];
 	});
 }
 
@@ -80,7 +83,8 @@ RCT_REMAP_METHOD(userInfo,
 
 			NSNumber *id = result.ID;
 			NSString *nickName = [result propertyForKey:KOUserNicknamePropertyKey];
-			NSString *email = [result propertyForKey:KOUserEmailPropertyKey];
+			// NSString *email = [result propertyForKey:KOUserEmailPropertyKey];
+			NSString *email = result.email;
 			NSString *profileImage = [result propertyForKey:KOUserProfileImagePropertyKey];
 			NSString *profileImageThumnail = [result propertyForKey:KOUserThumbnailImagePropertyKey];
 
