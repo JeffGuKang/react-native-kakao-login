@@ -29,5 +29,5 @@ dependencies {
   compile 'com.facebook.react:react-native:+'
 
   // 카카오 로그인 sdk를 사용하기 위해 필요.
-  compile group: 'com.kakao.sdk', name: 'usermgmt', version: '1.1.36'
+  compile group: 'com.kakao.sdk', name: 'usermgmt', version: '1.7.0'
 }
