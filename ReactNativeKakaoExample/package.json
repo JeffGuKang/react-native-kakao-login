@@ -1,23 +1,24 @@
 {
-	"name": "ReactNativeKakaoExample",
-	"version": "0.0.1",
-	"private": true,
-	"scripts": {
-		"start": "node node_modules/react-native/local-cli/cli.js start",
-		"test": "jest"
-	},
-	"dependencies": {
-		"react": "16.0.0-alpha.6",
-		"react-native": "0.44.0",
-		"react-native-kakao": "file:../"
-	},
-	"devDependencies": {
-		"babel-jest": "20.0.0",
-		"babel-preset-react-native": "1.9.1",
-		"jest": "20.0.0",
-		"react-test-renderer": "16.0.0-alpha.6"
-	},
-	"jest": {
-		"preset": "react-native"
-	}
+  "name": "ReactNativeKakaoExample",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "clean": "watchman watch-del-all && rm -fr $TMPDIR/react-* && npm cache clean --force && rm -rf node_modules && yarn install && cd android && ./gradlew clean"
+  },
+  "dependencies": {
+    "react": "16.0.0",
+    "react-native": "0.51.0",
+    "react-native-kakao": "file:../"
+  },
+  "devDependencies": {
+    "babel-jest": "21.2.0",
+    "babel-preset-react-native": "4.0.0",
+    "jest": "21.2.1",
+    "react-test-renderer": "16.0.0"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
 }

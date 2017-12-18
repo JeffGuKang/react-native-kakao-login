@@ -41,7 +41,6 @@ buck-out
 .gradle
 local.properties
 *.iml
-/android/
 
 # Node
 node_modules
@@ -58,3 +57,4 @@ node_modules
 /coverage
 /third-party
 yarn.lock
+package-lock.json

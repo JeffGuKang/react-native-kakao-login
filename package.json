@@ -17,11 +17,9 @@
   },
   "homepage": "https://github.com/JeffGuKang/react-native-kakao#readme",
   "dependencies": {
-    "react": "^16.0.0-alpha.6",
-    "react-native": "^0.44"
+    "react": "16.2.0",
+    "react-native": ">0.44.3"
   },
-  "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-preset-flow": "^6.23.0"
+  "devDependencies": {    
   }
 }

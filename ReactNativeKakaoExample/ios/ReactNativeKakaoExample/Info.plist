@@ -35,16 +35,6 @@
 	<string>1</string>
 	<key>KAKAO_APP_KEY</key>
 	<string>c51d03109bf1e220198fc7a59c229d8a</string>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>kakaoc51d03109bf1e220198fc7a59c229d8a</string>
-		<string>kakaokompassauth</string>
-		<string>storykompassauth</string>
-		<string>kakaolink</string>
-		<string>kakaotalk-4.5.0</string>
-		<string>kakaostory-2.9.0</string>
-		<string>storylink</string>
-	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -74,5 +64,15 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+  <key>LSApplicationQueriesSchemes</key>
+  <array>
+    <string>kakaoc51d03109bf1e220198fc7a59c229d8a</string>
+    <string>kakaokompassauth</string>
+    <string>storykompassauth</string>
+    <string>kakaolink</string>
+    <string>kakaotalk-4.5.0</string>
+    <string>kakaostory-2.9.0</string>
+    <string>storylink</string>
+  </array>
 </dict>
 </plist>

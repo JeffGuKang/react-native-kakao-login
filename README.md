@@ -106,11 +106,50 @@ This is the typical information you obtain once the user sign in:
   1. Add URL types
     Add `kakao<yourappId>` in URL Schemes
     ![url types](https://developers.kakao.com/assets/images/ios/url_types.png)    
-    Add native app key in plist
+
+  2. Add native app key in plist
     ![addkakaoid](https://developers.kakao.com/assets/images/ios/setting_plist.png)
+
+- Add codes to `AppDelegate.m`
+  ```
+  - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+                                         sourceApplication:(NSString *)sourceApplication
+                                                annotation:(id)annotation {
+      ...
+      if ([KOSession isKakaoAccountLoginCallback:url]) {
+          return [KOSession handleOpenURL:url];
+      }
+
+      return NO;      
+  }
+
+  - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+                                                   options:(NSDictionary<NSString *,id> *)options {
+      ...
+      if ([KOSession isKakaoAccountLoginCallback:url]) {
+          return [KOSession handleOpenURL:url];
+      }
+
+      return NO;    
+  }
+
+  - (void)applicationDidBecomeActive:(UIApplication *)application
+  {
+      [KOSession handleDidBecomeActive];
+  }
+  ```
 
 ### Android
 (...ing)
+
+### Troubleshooting
+  `compile group: 'com.kakao.sdk', name: 'usermgmt', version: '1.1.36'`
+
+   1.2 버전 이상에서는 빌드가 되지 않는다.
+   최신버전(1.3) 을 사용하기 위해서
+   - Gradle 2.14.1
+   - Android Gradle Plugin 2.2.3
+   이상을 사용하기를 권장한다.
 
 ## Licence
 (MIT)

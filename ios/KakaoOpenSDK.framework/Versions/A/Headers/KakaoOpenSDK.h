@@ -1,5 +1,5 @@
 /**
- * Copyright 2015-2016 Kakao Corp.
+ * Copyright 2015-2017 Kakao Corp.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,21 +14,20 @@
  * limitations under the License.
  */
 
-#import "KOError.h"
-#import "KOImages.h"
-#import "KOLoginButton.h"
-#import "KOAppCall.h"
-#import "KOSession.h"
-#import "KOUtils.h"
-#import "KOAgeAuthQueryStringBuilder.h"
+#import <KakaoOpenSDK/KOError.h>
+#import <KakaoOpenSDK/KOImages.h>
+#import <KakaoOpenSDK/KOLoginButton.h>
+#import <KakaoOpenSDK/KOAppCall.h>
+#import <KakaoOpenSDK/KOSession.h>
+#import <KakaoOpenSDK/KOUtils.h>
+#import <KakaoOpenSDK/KOAgeAuthQueryStringBuilder.h>
 
-#import "KOSessionTask+UserManagementAPI.h"
-#import "KOSessionTask+TalkAPI.h"
-#import "KOSessionTask+StoryAPI.h"
-#import "KOSessionTask+PushAPI.h"
-#import "KOSessionTask+TokenAPI.h"
-#import "KOSessionTask+FriendAPI.h"
-#import "KOSessionTask+AgeAuthAPI.h"
-#import "KOSessionTask+StorageAPI.h"
+#import <KakaoOpenSDK/KOSessionTask+UserManagementAPI.h>
+#import <KakaoOpenSDK/KOSessionTask+TalkAPI.h>
+#import <KakaoOpenSDK/KOSessionTask+StoryAPI.h>
+#import <KakaoOpenSDK/KOSessionTask+PushAPI.h>
+#import <KakaoOpenSDK/KOSessionTask+TokenAPI.h>
+#import <KakaoOpenSDK/KOSessionTask+FriendAPI.h>
+#import <KakaoOpenSDK/KOSessionTask+AgeAuthAPI.h>
 
-#define KAKAO_SDK_IOS_VERSION_STRING @"1.2.4"
+#define KAKAO_SDK_IOS_VERSION_STRING @"1.5.1"
