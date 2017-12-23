@@ -142,6 +142,20 @@ This is the typical information you obtain once the user sign in:
 ### Android
 (...ing)
 
+## Install
+
+Add maven
+build.gradle
+
+```
+subprojects {
+    repositories {
+        mavenCentral()
+        maven { url 'http://devrepo.kakao.com:8088/nexus/content/groups/public/' }
+    }
+}
+```
+
 ### Troubleshooting
   `compile group: 'com.kakao.sdk', name: 'usermgmt', version: '1.1.36'`
 

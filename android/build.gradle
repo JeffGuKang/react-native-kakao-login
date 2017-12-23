@@ -6,7 +6,7 @@ android {
 
   defaultConfig {
     minSdkVersion 16
-    targetSdkVersion 22
+    targetSdkVersion 23
     versionCode 1
     versionName "1.0"
     testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -21,13 +21,18 @@ android {
 
 repositories {
   mavenCentral()
-  maven { url 'http://devrepo.kakao.com:8088/nexus/content/groups/public/' }
+}
+
+subprojects {
+  repositories {
+    mavenCentral()
+    maven { url 'http://devrepo.kakao.com:8088/nexus/content/groups/public/' }
+  }
 }
 
 dependencies {
   //compile fileTree(include: ['*.jar'], dir: 'libs')
   compile 'com.facebook.react:react-native:+'
-
-  // 카카오 로그인 sdk를 사용하기 위해 필요.
-  compile group: 'com.kakao.sdk', name: 'usermgmt', version: '1.7.0'
+  compile 'com.android.support:appcompat-v7:23.+'
+  compile group: 'com.kakao.sdk', name: 'usermgmt', version: '1.6.3'
 }

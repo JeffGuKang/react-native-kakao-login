@@ -58,3 +58,4 @@ node_modules
 /third-party
 yarn.lock
 package-lock.json
+android/build
