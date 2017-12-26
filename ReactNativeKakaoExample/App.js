@@ -42,6 +42,7 @@ export default class ReactNativeKakaoExample extends Component {
   }
 
   _onPressLogin() {
+    console.log("_onPressLogin");
     this._kakaoLogin();
   }
 
@@ -68,18 +69,16 @@ export default class ReactNativeKakaoExample extends Component {
           />
         </TouchableOpacity>
 
-        <Text>UserInfo</Text>
-
-        <View style={{height: '30%',width: '80%', alignItems: 'center', backgroundColor: 'grey'}}>
+        <View style={{width: '80%', height: 330, alignItems: 'center'}}>
+          <Text>UserInfo</Text>
           <TextInput
             style={styles.userInfo}
             pointerEvents="none"
             multiline={true}
-            numberOfLines={6}
-            value={this.state.userInfo || 'Information'}/>
+            numberOfLines={22}
+            editable={false}
+            value={this.state.userInfo}/>
         </View>
-
-
       </View>
     );
   }
@@ -108,7 +107,9 @@ const styles = StyleSheet.create({
   },
   userInfo: {
     flex: 1,
-    width: '80%',
-    height: 150,
+    width: '100%',
+    marginTop: 10,
+    backgroundColor: 'grey',
+    color: 'white',
   }
 });
