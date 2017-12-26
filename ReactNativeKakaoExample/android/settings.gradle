@@ -1,5 +1,9 @@
 rootProject.name = 'ReactNativeKakaoExample'
 include ':react-native-kakao'
 project(':react-native-kakao').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-kakao/android')
+include ':react-native-kakao'
+project(':react-native-kakao').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-kakao/android')
+include ':react-native-kakao'
+project(':react-native-kakao').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-kakao/android')
 
 include ':app'
