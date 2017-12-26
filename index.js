@@ -13,9 +13,8 @@ export default ReactNativeKakao;
   Kakao Login Example
 
   ```
-  let authTypes = [KakaoAuthType.Talk, KakaoAuthType.Story, KakaoAuthType.Account];
 
-  RNKakao.login(authTypes)
+  RNKakao.login()
   .then(result => {
     console.log("Result");
     console.log(result);
