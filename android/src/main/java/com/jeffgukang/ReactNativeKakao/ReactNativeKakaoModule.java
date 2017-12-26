@@ -1,4 +1,4 @@
-package com.jeffgukang.reactnativekakao;
+package com.jeffgukang.ReactNativeKakao;
 
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
@@ -7,6 +7,7 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.WritableNativeArray;
+import com.jeffgukang.ReactNativeKakao.ReactNativeKakaoLogin;
 
 import java.util.Map;
 import java.util.ArrayList;
@@ -23,8 +24,12 @@ public class ReactNativeKakaoModule extends ReactContextBaseJavaModule {
   private static final Integer KOAuthTypeStory = 1;
   private static final Integer KOAuthTypeAccount = 2;
 
+  private ReactNativeKakaoLogin kakaoLogin;
+
   public ReactNativeKakaoModule(ReactApplicationContext reactContext) {
     super(reactContext);
+    if( this.kakaoLogin != null) return;
+    this.kakaoLogin= new ReactNativeKakaoLogin(reactContext);
   }
 
   @Override
@@ -42,22 +47,12 @@ public class ReactNativeKakaoModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void findCars(Promise promise) {
-    WritableNativeArray cars = new WritableNativeArray();
-    cars.pushString("Mercedes-Benz");
-    cars.pushString("BMW");
-    cars.pushString("Porsche");
-    cars.pushString("Opel");
-    cars.pushString("Volkswagen");
-    cars.pushString("Audi");
-
-    if (promise != null) {
-      promise.resolve(cars);
-    }
+  public void login(Promise promise) {
+    kakaoLogin.login(promise);
   }
 
   @ReactMethod
-  public void login(List<Integer> authTypes, Promise promise) {
-
+  public void logout(Promise promise) {
+    kakaoLogin.logout(promise);
   }
 }

@@ -33,7 +33,7 @@ RCT_EXPORT_MODULE();
  Login or Signup
  @param authTypes array consists in KOAuthType.
  */
-RCT_REMAP_METHOD(login,
+RCT_REMAP_METHOD(loginWithAuthTypes,
 				 authTypes: (NSArray* )authTypes
 				 resolver:(RCTPromiseResolveBlock)resolve
 				 rejecter:(RCTPromiseRejectBlock)reject)
@@ -42,6 +42,41 @@ RCT_REMAP_METHOD(login,
 		[[KOSession sharedSession] close];
 		NSArray *auths = (authTypes != nil) ? authTypes : @[@(KOAuthTypeTalk), @(KOAuthTypeStory), @(KOAuthTypeAccount)];
 //		- (void)openWithCompletionHandler:(KOSessionCompletionHandler)completionHandler authTypes:(NSArray<NSNumber *> *)authTypes;
+		[[KOSession sharedSession] openWithCompletionHandler:^(NSError *error) {
+			NSLog(@"MYLOG: openWithCompletionHandler");
+
+			if(error) {
+				NSLog(@"Error: %@", error.description);
+				NSLog(@"%@", error.description);
+
+				reject(@"RNKakao", @"login error", error);
+				return;
+			}
+
+			if ([[KOSession sharedSession] isOpen]) {
+				NSLog(@"sharedSession is open");
+
+				[self userInfoRequestResolve:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject];
+				return;
+			} else {
+				reject(@"RNKakao", @"login canceled", nil);
+				return;
+			}
+		} authTypes:auths];
+	});
+}
+
+/**
+ Login or Signup
+ */
+RCT_REMAP_METHOD(login,
+				 loginWithResolver:(RCTPromiseResolveBlock)resolve
+				 loginWithRejecter:(RCTPromiseRejectBlock)reject)
+{
+	dispatch_async(dispatch_get_main_queue(), ^{
+		[[KOSession sharedSession] close];
+		NSArray *auths = @[@(KOAuthTypeTalk)];
+
 		[[KOSession sharedSession] openWithCompletionHandler:^(NSError *error) {
 			NSLog(@"MYLOG: openWithCompletionHandler");
 			
@@ -70,8 +105,8 @@ RCT_REMAP_METHOD(login,
  Get userInfo
  */
 RCT_REMAP_METHOD(userInfo,
-				 resolver:(RCTPromiseResolveBlock)resolve
-				 rejecter:(RCTPromiseRejectBlock)reject)
+				 userInfoWithResolver:(RCTPromiseResolveBlock)resolve
+				 userInfoWithRejecter:(RCTPromiseRejectBlock)reject)
 {
 	[self userInfoRequestResolve:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject];
 }

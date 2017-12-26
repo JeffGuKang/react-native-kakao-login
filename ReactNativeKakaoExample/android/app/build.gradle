@@ -137,6 +137,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-kakao')
 //    compile 'com.android.support:multidex:1.0.0'
     compile (project(':react-native-kakao')) {
       exclude module: 'support-v4'

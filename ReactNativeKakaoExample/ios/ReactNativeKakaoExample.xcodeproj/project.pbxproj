@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -37,7 +38,7 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		CC8FE1C41FE37705000F3521 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC8FE1A81FE37705000F3521 /* KakaoOpenSDK.framework */; };
-		07E8A5B09889403BAAF27702 /* libReactNativeKakao.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B5EB3A7528B405A922C0796 /* libReactNativeKakao.a */; };
+		FA28DF0077894DEF874DAC8F /* libReactNativeKakao.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75ADF56237E54F1C8DF4A81A /* libReactNativeKakao.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -300,6 +301,13 @@
 			remoteGlobalIDString = 9936F32F1F5F2E5B0010BF04;
 			remoteInfo = "privatedata-tvOS";
 		};
+		CCC35F841FF253EB002DD478 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D9B51AB0232144EF9DF55BA6 /* ReactNativeKakao.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CC4BCC9A1EBF2F55005E637B;
+			remoteInfo = ReactNativeKakao;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -325,12 +333,12 @@
 		2D02E47B1E0B4A5D006451C7 /* ReactNativeKakaoExample-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ReactNativeKakaoExample-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* ReactNativeKakaoExample-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ReactNativeKakaoExample-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
+		75ADF56237E54F1C8DF4A81A /* libReactNativeKakao.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libReactNativeKakao.a; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 		CC8FE1A81FE37705000F3521 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
-		C2815846CB9B42FE8BE6F721 /* ReactNativeKakao.xcodeproj */ = {isa = PBXFileReference; name = "ReactNativeKakao.xcodeproj"; path = "../node_modules/react-native-kakao/ios/ReactNativeKakao.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		3B5EB3A7528B405A922C0796 /* libReactNativeKakao.a */ = {isa = PBXFileReference; name = "libReactNativeKakao.a"; path = "libReactNativeKakao.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		D9B51AB0232144EF9DF55BA6 /* ReactNativeKakao.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeKakao.xcodeproj; path = "../node_modules/react-native-kakao/ios/ReactNativeKakao.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -360,7 +368,7 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				07E8A5B09889403BAAF27702 /* libReactNativeKakao.a in Frameworks */,
+				FA28DF0077894DEF874DAC8F /* libReactNativeKakao.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,7 +545,7 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
-				C2815846CB9B42FE8BE6F721 /* ReactNativeKakao.xcodeproj */,
+				D9B51AB0232144EF9DF55BA6 /* ReactNativeKakao.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -588,9 +596,17 @@
 		CCAA3FA71FE3887700C8F15A /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				2361E2027AE94099AF2FC6AD /* libReactNativeKakao.a */,
+				75ADF56237E54F1C8DF4A81A /* libReactNativeKakao.a */,
 			);
 			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		CCC35F811FF253EB002DD478 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CCC35F851FF253EB002DD478 /* libReactNativeKakao.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -754,6 +770,10 @@
 				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+				},
+				{
+					ProductGroup = CCC35F811FF253EB002DD478 /* Products */;
+					ProjectRef = D9B51AB0232144EF9DF55BA6 /* ReactNativeKakao.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1010,6 +1030,13 @@
 			fileType = archive.ar;
 			path = "libprivatedata-tvOS.a";
 			remoteRef = CC8FE1DD1FE37BF2000F3521 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CCC35F851FF253EB002DD478 /* libReactNativeKakao.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libReactNativeKakao.a;
+			remoteRef = CCC35F841FF253EB002DD478 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

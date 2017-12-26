@@ -1,4 +1,4 @@
-package com.jeffgukang.reactnativekakao;
+package com.jeffgukang.ReactNativeKakao;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
@@ -12,11 +12,6 @@ import java.util.Collections;
 import java.util.List;
 
 public class ReactNativeKakaoReactPackage implements ReactPackage {
-
-  @Override
-  public List<Class<? extends JavaScriptModule>> createJSModules() {
-    return Collections.emptyList();
-  }
 
   @Override
   public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {

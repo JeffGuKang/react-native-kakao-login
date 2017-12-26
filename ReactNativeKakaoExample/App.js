@@ -26,11 +26,7 @@ export default class ReactNativeKakaoExample extends Component {
   }
 
   _kakaoLogin() {
-    let authTypes = [RNKakao.KOAuthTypeTalk, RNKakao.KOAuthTypeStory, RNKakao.KOAuthTypeAccount];
-
-    console.log(RNKakao.KOAuthTypeTalk);
-
-    RNKakao.login(null)
+    RNKakao.login()
     .then(result => {
       console.log("Result");
       console.log(result);
