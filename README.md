@@ -1,20 +1,31 @@
 # React Native Kakao
 
-Supported operating systems are >= Android 4.1 (API 16) and >= iOS 9.0.
+Supported operating systems are >= Android 4.1 (API 16) and >= iOS 10.0.
+Tested React Native 0.57v
 
 ## Introduction
 
-React Native module for using kakao sdk.
+React Native module for using kakao login sdk.
 
 ## Installation
 
 Auto install is supported by npm.
 
-
 ```
   npm install --save react-native-kakao
-  npm link react-native-kakao
+  react-native link react-native-kakao
 ```
+
+Yarn
+
+```
+  yarn add react-native-kakao
+  react-native link react-native-kakao
+```
+
+## Example
+
+Refer to ReactNativeKakaoExample.
 
 ## Public APIs
 
@@ -37,9 +48,9 @@ let authTypes = [RNKakao.KOAuthTypeTalk, RNKakao.KOAuthTypeStory, RNKakao.KOAuth
 RNKakao.login(authTypes)
 .then(user => {
   console.log(user);
-  this.setState({user: user});  
+  this.setState({user: user});
 })
-.catch(error => {      
+.catch(error => {
   console.log(error);
 })
 ```
@@ -62,16 +73,20 @@ This is the typical information you obtain once the user sign in:
   {
     id: <user id>
     accessToken: <needed to access kakao API from the application>
-    nickname: <user nickname>
-    email: <user email>
-    profileImage: <user picture profile url>    
-    profileImageThumnail: <user picture profile thumnail url>    
+    nickname: <user nickname> // nullable
+    email: <user email> // nullable
+    profileImage: <user picture profile url> // nullable
+    profileImageThumnail: <user picture profile thumnail url> // nullable
+    ageRange: <user age range> // nullable
+    gender: <user gender> // nullable
   }
 ```
 
 ## Project setup and initialization
 
 ### iOS
+
+Recommend test on real device instead of simulator. Latest Kakao SDK is not support x86_64 architecture.
 
 [Officail Kakao](https://developers.kakao.com/docs/ios#시작하기-개발환경)
 
@@ -105,7 +120,7 @@ This is the typical information you obtain once the user sign in:
 
   1. Add URL types
     Add `kakao<yourappId>` in URL Schemes
-    ![url types](https://developers.kakao.com/assets/images/ios/url_types.png)    
+    ![url types](https://developers.kakao.com/assets/images/ios/url_types.png)
 
   2. Add native app key in plist
     ![addkakaoid](https://developers.kakao.com/assets/images/ios/setting_plist.png)
@@ -120,7 +135,7 @@ This is the typical information you obtain once the user sign in:
           return [KOSession handleOpenURL:url];
       }
 
-      return NO;      
+      return NO;
   }
 
   - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
@@ -130,7 +145,7 @@ This is the typical information you obtain once the user sign in:
           return [KOSession handleOpenURL:url];
       }
 
-      return NO;    
+      return NO;
   }
 
   - (void)applicationDidBecomeActive:(UIApplication *)application
@@ -157,6 +172,17 @@ subprojects {
 ```
 
 ### Troubleshooting
+
+Recommend run ReactNativeKakaoExample.
+
+#### IOS
+
+##### Build Error: linker, arm64, x86_64
+
+추가한 KakaoOpenSDK.framewrok 를 눌러 Target Membership 체크가 정상적으로 되어 있는지 확인한다.
+
+#### Android
+
   `compile group: 'com.kakao.sdk', name: 'usermgmt', version: '1.1.36'`
 
    1.2 버전 이상에서는 빌드가 되지 않는다.

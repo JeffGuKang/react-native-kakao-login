@@ -30,7 +30,21 @@ export default class ReactNativeKakaoExample extends Component {
     .then(result => {
       console.log("Result");
       console.log(result);
-      alert(JSON.stringify(result));
+      this.setState({
+        userInfo: JSON.stringify(result)
+      });
+    })
+    .catch(error => {
+      console.log("Error");
+      console.log(error);
+    })
+  }
+
+  _userInfo() {
+    RNKakao.userInfo()
+    .then(result => {
+      console.log("Result");
+      console.log(result);
       this.setState({
         userInfo: JSON.stringify(result)
       });
@@ -44,6 +58,12 @@ export default class ReactNativeKakaoExample extends Component {
   _onPressLogin() {
     console.log("_onPressLogin");
     this._kakaoLogin();
+  }
+
+  _clear() {
+    this.setState({
+      userInfo: ""
+    });
   }
 
   render() {
@@ -67,6 +87,16 @@ export default class ReactNativeKakaoExample extends Component {
             style={styles.kakaoButton}
             source={require('./assets/images/kakao_login_btn.png')}
           />
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={{alignItems: 'center', height: 30}}
+          onPress={() => this._clear()}>
+          <Text style={{textAlign: 'center', backgroundColor: 'grey', width: 100}}>Reset</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={{alignItems: 'center', height: 30}}
+          onPress={() => this._userInfo()}>
+          <Text style={{textAlign: 'center', backgroundColor: 'blue', width: 100}}>UserInfo</Text>
         </TouchableOpacity>
 
         <View style={{width: '80%', height: 330, alignItems: 'center'}}>
