@@ -1,6 +1,6 @@
 {
   "name": "react-native-kakao",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Kakao login module(package) for React Native",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,8 @@
     "login",
     "kakao-signin",
     "카카오",
-    "로그인"
+    "로그인",
+    "리엑트 네이티브"
   ],
   "repository": {
     "type": "git",

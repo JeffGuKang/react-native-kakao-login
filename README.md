@@ -11,14 +11,14 @@ React Native module for using kakao login sdk.
 
 Auto install is supported by npm.
 
-```
+```js
   npm install --save react-native-kakao
   react-native link react-native-kakao
 ```
 
 Yarn
 
-```
+```js
   yarn add react-native-kakao
   react-native link react-native-kakao
 ```
@@ -42,17 +42,46 @@ RNKakao.login(authTypes)
 ```
 
 Example
-```js
-let authTypes = [RNKakao.KOAuthTypeTalk, RNKakao.KOAuthTypeStory, RNKakao.KOAuthTypeAccount];
 
-RNKakao.login(authTypes)
-.then(user => {
-  console.log(user);
-  this.setState({user: user});
-})
-.catch(error => {
-  console.log(error);
-})
+```js
+  kakaoLogin = async () => {
+    try {
+      const result = await RNKakao.login();
+      this.setState({
+        userInfo: JSON.stringify(result)
+      });
+    } catch (e) {
+      this.setState({
+        userInfo: `Error: ${e}`
+      });
+    }
+  }
+
+  kakaoLogout = async () => {
+    try {
+      const result = await RNKakao.logout();
+      this.setState({
+        userInfo: JSON.stringify(result)
+      });
+    } catch (e) {
+      this.setState({
+        userInfo: `Error: ${e}`
+      });
+    }
+  }
+
+  getUserInfo = async () => {
+    try {
+      const result = await RNKakao.userInfo();
+      this.setState({
+        userInfo: JSON.stringify(result)
+      });
+    } catch (e) {
+      this.setState({
+        userInfo: `Error: ${e}`
+      });
+    }
+  }
 ```
 
 #### - Auth Types
@@ -126,7 +155,8 @@ Recommend test on real device instead of simulator. Latest Kakao SDK is not supp
     ![addkakaoid](https://developers.kakao.com/assets/images/ios/setting_plist.png)
 
 - Add codes to `AppDelegate.m`
-  ```
+
+```js
   - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
                                          sourceApplication:(NSString *)sourceApplication
                                                 annotation:(id)annotation {
@@ -152,17 +182,13 @@ Recommend test on real device instead of simulator. Latest Kakao SDK is not supp
   {
       [KOSession handleDidBecomeActive];
   }
-  ```
+```
 
 ### Android
-(...ing)
 
-## Install
+Add maven to `android/build.gradle`.
 
-Add maven
-build.gradle
-
-```
+```js
 subprojects {
     repositories {
         mavenCentral()
@@ -170,6 +196,40 @@ subprojects {
     }
 }
 ```
+
+Add your app key in `AndroidManifest.xml`.
+
+```xml
+<application>
+  <meta-data
+      android:name="com.kakao.sdk.AppKey"
+      android:value="YOUR_APP_KEY" />
+      ...
+```
+
+Add dependencies to `android/app/build.gradle`.
+It can be `compile` instead of `implementation` in gradle of low version.
+
+```js
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "com.android.support:appcompat-v7:28.0.0"
+    implementation "com.facebook.react:react-native:+"
+    // From node_modules
+    implementation project(':react-native-kakao') // Check this line.
+}
+```
+
+`settings.gradle` will be set automatically.
+
+```js
+include ':react-native-kakao'
+project(':react-native-kakao').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-kakao/android')
+```
+
+### TO DO
+
+- [ ] dynamic agreement(https://developers.kakao.com/docs/android/user-management#동적동의)
 
 ### Troubleshooting
 
@@ -181,15 +241,6 @@ Recommend run ReactNativeKakaoExample.
 
 추가한 KakaoOpenSDK.framewrok 를 눌러 Target Membership 체크가 정상적으로 되어 있는지 확인한다.
 
-#### Android
-
-  `compile group: 'com.kakao.sdk', name: 'usermgmt', version: '1.1.36'`
-
-   1.2 버전 이상에서는 빌드가 되지 않는다.
-   최신버전(1.3) 을 사용하기 위해서
-   - Gradle 2.14.1
-   - Android Gradle Plugin 2.2.3
-   이상을 사용하기를 권장한다.
-
 ## Licence
+
 (MIT)
