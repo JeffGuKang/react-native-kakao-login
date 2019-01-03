@@ -6,7 +6,8 @@
     "start": "react-native start",
     "test": "jest",
     "clean": "watchman watch-del-all && rm -fr $TMPDIR/react-* && npm cache clean --force && rm -rf node_modules && yarn install && cd android && ./gradlew clean",
-    "ios": "react-native run-ios"
+    "ios": "react-native run-ios",
+    "android": "react-native run-android"
   },
   "dependencies": {
     "react": "16.6.3",

@@ -25,7 +25,7 @@ export default class ReactNativeKakaoExample extends Component {
     };
   }
 
-  _kakaoLogin() {
+  _kakaoLogin = () => {
     RNKakao.login()
     .then(result => {
       console.log("Result");
@@ -40,7 +40,22 @@ export default class ReactNativeKakaoExample extends Component {
     })
   }
 
-  _userInfo() {
+  _kakaoLogout = () => {
+    RNKakao.logout()
+    .then(result => {
+      console.log("Result");
+      console.log(result);
+      this.setState({
+        userInfo: JSON.stringify(result)
+      });
+    })
+    .catch(error => {
+      console.log("Error");
+      console.log(error);
+    })
+  }
+
+  _userInfo = () => {
     RNKakao.userInfo()
     .then(result => {
       console.log("Result");
@@ -55,12 +70,17 @@ export default class ReactNativeKakaoExample extends Component {
     })
   }
 
-  _onPressLogin() {
+  _onPressLogin = () => {
     console.log("_onPressLogin");
     this._kakaoLogin();
   }
 
-  _clear() {
+  _onPressLogout = () => {
+    console.log("_onPressLogout");
+    this._kakaoLogout();
+  }
+
+  _clear = () => {
     this.setState({
       userInfo: ""
     });
@@ -73,15 +93,12 @@ export default class ReactNativeKakaoExample extends Component {
           React Native Kakao
         </Text>
         <Text style={styles.instructions}>
-          To get started, edit index.js
-        </Text>
-        <Text style={styles.instructions}>
           Press Cmd+R to reload,{'\n'}
           Cmd+D or shake for dev menu
         </Text>
         <TouchableOpacity
           style={{top: 15, alignItems: 'center'}}
-          onPress={() => this._onPressLogin()}>
+          onPress={this._onPressLogin}>
           <Image
             resizeMode={'contain'}
             style={styles.kakaoButton}
@@ -89,13 +106,18 @@ export default class ReactNativeKakaoExample extends Component {
           />
         </TouchableOpacity>
         <TouchableOpacity
+          style={{alignItems: 'center'}}
+          onPress={this._onPressLogout}>
+          <Text style={{textAlign: 'center', backgroundColor: 'yellow', width: 100}}>LotOut</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
           style={{alignItems: 'center', height: 30}}
-          onPress={() => this._clear()}>
+          onPress={this._clear}>
           <Text style={{textAlign: 'center', backgroundColor: 'grey', width: 100}}>Reset</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={{alignItems: 'center', height: 30}}
-          onPress={() => this._userInfo()}>
+          onPress={this._userInfo}>
           <Text style={{textAlign: 'center', backgroundColor: 'blue', width: 100}}>UserInfo</Text>
         </TouchableOpacity>
 
@@ -107,6 +129,7 @@ export default class ReactNativeKakaoExample extends Component {
             multiline={true}
             numberOfLines={22}
             editable={false}
+            maxHeight={300}
             value={this.state.userInfo}/>
         </View>
       </View>

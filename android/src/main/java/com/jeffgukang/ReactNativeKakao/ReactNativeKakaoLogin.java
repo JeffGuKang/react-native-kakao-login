@@ -24,34 +24,30 @@ import com.kakao.auth.Session;
 import com.kakao.network.ErrorResult;
 import com.kakao.usermgmt.UserManagement;
 import com.kakao.usermgmt.callback.LogoutResponseCallback;
-import com.kakao.usermgmt.callback.MeResponseCallback;
-import com.kakao.usermgmt.response.model.UserProfile;
+import com.kakao.usermgmt.callback.MeV2ResponseCallback;
+import com.kakao.usermgmt.response.MeV2Response;
+import com.kakao.usermgmt.response.model.UserAccount;
 import com.kakao.util.exception.KakaoException;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.kakao.usermgmt.UserManagement.requestMe;
-
-
 //import com.kakao.auth.ErrorResult;
 
 public class ReactNativeKakaoLogin {
-    private static final String LOG_TAG = "ReactKakaoLogin";
+    private static final String LOG_TAG = "ReactNativeKakao";
     private final ReactApplicationContext reactApplicationContext;
     private Activity currentActivity;
     private SessionCallback sessionCallback;
     private boolean init = false;
 
     public ReactNativeKakaoLogin(ReactApplicationContext context) {
-        Log.v(LOG_TAG, "kakao : initialize");
         this.reactApplicationContext = context;
-
-
     }
 
     private void initialize(){
         if(!init){
+            Log.v(LOG_TAG, "kakao : initialize");
             currentActivity = reactApplicationContext.getCurrentActivity();
             init = true;
             try {
@@ -59,7 +55,6 @@ public class ReactNativeKakaoLogin {
             }catch(RuntimeException e){
                 Log.e("kakao init error", "error", e);
             }
-
         }
     }
 
@@ -67,47 +62,97 @@ public class ReactNativeKakaoLogin {
      * Log in
      */
     public void login(Promise promise) {
+        Log.d(LOG_TAG, "Login");
         initialize();
         this.sessionCallback = new SessionCallback(promise);
+        Session.getCurrentSession().clearCallbacks();
         Session.getCurrentSession().addCallback(sessionCallback);
         Session.getCurrentSession().open(AuthType.KAKAO_TALK, currentActivity);
+//        Session.getCurrentSession().checkAndImplicitOpen();
     }
 
     /**
      * Log out
      */
     public void logout(final Promise promise) {
+        Log.d(LOG_TAG, "Logout");
         initialize();
-        UserManagement.requestLogout(new LogoutResponseCallback() {
+        UserManagement.getInstance().requestLogout(new LogoutResponseCallback() {
+            WritableMap response = Arguments.createMap();
+
             @Override
             public void onCompleteLogout() {
+                response.putString("success", "Logged out");
+                promise.resolve(response);
             }
         });
-        WritableMap response = Arguments.createMap();
-        response.putString("success", "true");
-        promise.resolve(response);
+
     }
 
     /**
-     * Result
+     * Convert to Json response
+     * https://developers.kakao.com/docs/android/user-management#사용자-정보-요청
      * @param userProfile
      */
-    private WritableMap convertMapUserProfile(UserProfile userProfile) {
+    private WritableMap convertMapUserProfile(MeV2Response userProfile) {
         Log.v(LOG_TAG, "kakao : handleResult");
         WritableMap response = Arguments.createMap();
 
-        response.putString("id", String.valueOf(userProfile.getId()));
+        UserAccount account = userProfile.getKakaoAccount();
+
+        response.putDouble("id", userProfile.getId());
+        response.putString("accessToken", Session.getCurrentSession().getAccessToken());
         response.putString("nickName", userProfile.getNickname());
+        response.putString("email", account.getEmail());
         response.putString("profileImage", userProfile.getProfileImagePath());
         response.putString("profileImageThumnail", userProfile.getThumbnailImagePath());
-        response.putString("email", userProfile.getEmail());
-        response.putString("accessToken", Session.getCurrentSession().getAccessToken());
+//        response.putString("properties", String.valueOf(userProfile.getProperties()));
+
+        response.putString("gender", String.valueOf(account.getGender()));
+        response.putString("ageRange", String.valueOf(account.getAgeRange()));
+        response.putString("birthday", account.getBirthday());
 
         return response;
     }
 
     /**
+     * Get signed user information
+     */
+    public void userInfo(final Promise promise) {
+        initialize();
+
+        Log.d(LOG_TAG, "userInfo");
+        List<String> keys = new ArrayList<>();
+        keys.add("properties.nickname");
+        keys.add("properties.profile_image");
+        keys.add("properties.thumbnail_image");
+        keys.add("kakao_account.email");
+        keys.add("kakao_account.age_range");
+        keys.add("kakao_account.birthday");
+        keys.add("kakao_account.gender");
+
+        UserManagement.getInstance().me(keys, new MeV2ResponseCallback() {
+            @Override
+            public void onFailure(ErrorResult errorResult) {
+                promise.reject("onFailure", errorResult.toString());
+            }
+
+            @Override
+            public void onSessionClosed(ErrorResult errorResult) {
+                promise.reject("onNotSignedUp", errorResult.toString());
+            }
+
+            @Override
+            public void onSuccess(MeV2Response response) {
+                WritableMap userMap = convertMapUserProfile(response);
+                promise.resolve(userMap);
+            }
+        });
+    }
+
+    /**
      * Class SessonCallback
+     * https://developers.kakao.com/docs/android/user-management#사용자-정보-요청
      */
     private class SessionCallback implements ISessionCallback {
         private final Promise promise;
@@ -119,46 +164,8 @@ public class ReactNativeKakaoLogin {
         @Override
         public void onSessionOpened() {
             Log.v(LOG_TAG, "kakao : SessionCallback.onSessionOpened");
-            List<String> propertyKeys = new ArrayList<String>();
-            propertyKeys.add("kaccount_email");
-            propertyKeys.add("nickname");
-            propertyKeys.add("profile_image");
-            propertyKeys.add("thumbnail_image");
-
-            requestMe(new MeResponseCallback() {
-                @Override
-                public void onFailure(ErrorResult errorResult) {
-                    removeCallback();
-                    promise.reject("onFaileure", "로그인 실패");
-//                    callbackContext.error("kakao : SessionCallback.onSessionOpened.requestMe.onFailure - " + errorResult);
-                }
-
-                @Override
-                public void onSessionClosed(ErrorResult errorResult) {
-                    Log.v(LOG_TAG, "kakao : SessionCallback.onSessionOpened.requestMe.onSessionClosed - " + errorResult);
-                    Session.getCurrentSession().checkAndImplicitOpen();
-                }
-
-                @Override
-                public void onSuccess(UserProfile userProfile) {
-                    removeCallback();
-                    WritableMap userMap = convertMapUserProfile(userProfile);
-//                    Log.d("userMap::::", userMap.toString());
-                    promise.resolve(userMap);
-                }
-
-
-
-                @Override
-                public void onNotSignedUp() {
-                    removeCallback();
-                    promise.reject("onNotSignedUp", "로그인 취소");
-//                    callbackContext.error("this user is not signed up");
-                }
-                private void removeCallback(){
-                    Session.getCurrentSession().removeCallback(sessionCallback);
-                }
-            }, propertyKeys, false);
+            ReactNativeKakaoLogin.this.userInfo(this.promise);
+            // call userInfo()
         }
 
         @Override
@@ -198,10 +205,12 @@ public class ReactNativeKakaoLogin {
         @Override
         public ISessionConfig getSessionConfig() {
             return new ISessionConfig() {
-                @Override
-                public AuthType[] getAuthTypes() {
-                    return new AuthType[]{AuthType.KAKAO_TALK};
-                }
+
+                // 로그인시 인증받을 타입을 지정한다. 지정하지 않을 시 가능한 모든 옵션이 지정된다.
+                 @Override
+                 public AuthType[] getAuthTypes() {
+                     return new AuthType[]{AuthType.KAKAO_LOGIN_ALL};
+                 }
 
                 @Override
                 public boolean isUsingWebviewTimer() {
@@ -235,5 +244,4 @@ public class ReactNativeKakaoLogin {
             };
         }
     }
-
 }
