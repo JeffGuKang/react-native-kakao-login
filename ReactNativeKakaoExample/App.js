@@ -5,7 +5,6 @@
 
 import React, { Component } from 'react';
 import {
-  AppRegistry,
   StyleSheet,
   Text,
   View,
@@ -15,8 +14,10 @@ import {
 } from 'react-native';
 import RNKakao from 'react-native-kakao';
 
-export default class ReactNativeKakaoExample extends Component {
+// eslint-disable-next-line import/no-unresolved
+const KAKAO_BUTTON_IMG = require('./assets/images/kakaologinbtn.png');
 
+export default class ReactNativeKakaoExample extends Component {
   constructor(props) {
     super(props);
 
@@ -25,112 +26,114 @@ export default class ReactNativeKakaoExample extends Component {
     };
   }
 
-  _kakaoLogin = () => {
-    RNKakao.login()
-    .then(result => {
-      console.log("Result");
-      console.log(result);
-      this.setState({
-        userInfo: JSON.stringify(result)
+  kakaoLogin = () => {
+    RNKakao.login()``
+      .then((result) => {
+        this.setState({
+          userInfo: JSON.stringify(result)
+        });
+      })
+      .catch((error) => {
+        this.setState({
+          userInfo: `Error: ${error}`
+        });
       });
-    })
-    .catch(error => {
-      console.log("Error");
-      console.log(error);
-    })
   }
 
-  _kakaoLogout = () => {
+  kakaoLogout = () => {
     RNKakao.logout()
-    .then(result => {
-      console.log("Result");
-      console.log(result);
-      this.setState({
-        userInfo: JSON.stringify(result)
+      .then((result) => {
+        this.setState({
+          userInfo: JSON.stringify(result)
+        });
+      })
+      .catch((error) => {
+        this.setState({
+          userInfo: `Error: ${error}`
+        });
       });
-    })
-    .catch(error => {
-      console.log("Error");
-      console.log(error);
-    })
   }
 
-  _userInfo = () => {
+  userInfo = () => {
     RNKakao.userInfo()
-    .then(result => {
-      console.log("Result");
-      console.log(result);
-      this.setState({
-        userInfo: JSON.stringify(result)
+      .then((result) => {
+        this.setState({
+          userInfo: JSON.stringify(result)
+        });
+      })
+      .catch((error) => {
+        this.setState({
+          userInfo: `Error: ${error}`
+        });
       });
-    })
-    .catch(error => {
-      console.log("Error");
-      console.log(error);
-    })
   }
 
-  _onPressLogin = () => {
-    console.log("_onPressLogin");
-    this._kakaoLogin();
+  onPressLogin = () => {
+    this.kakaoLogin();
   }
 
-  _onPressLogout = () => {
-    console.log("_onPressLogout");
-    this._kakaoLogout();
+  onPressLogout = () => {
+    this.kakaoLogout();
   }
 
-  _clear = () => {
+  clear = () => {
     this.setState({
-      userInfo: ""
+      userInfo: ''
     });
   }
 
   render() {
+    const { userInfo } = this.state;
+
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
           React Native Kakao
         </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+        <Text style={styles.instructions} />
         <TouchableOpacity
-          style={{top: 15, alignItems: 'center'}}
-          onPress={this._onPressLogin}>
+          style={{ top: 15, alignItems: 'center' }}
+          onPress={this.onPressLogin}
+        >
           <Image
-            resizeMode={'contain'}
+            resizeMode="contain"
             style={styles.kakaoButton}
-            source={require('./assets/images/kakao_login_btn.png')}
+            source={KAKAO_BUTTON_IMG}
           />
         </TouchableOpacity>
-        <TouchableOpacity
-          style={{alignItems: 'center'}}
-          onPress={this._onPressLogout}>
-          <Text style={{textAlign: 'center', backgroundColor: 'yellow', width: 100}}>LotOut</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={{alignItems: 'center', height: 30}}
-          onPress={this._clear}>
-          <Text style={{textAlign: 'center', backgroundColor: 'grey', width: 100}}>Reset</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={{alignItems: 'center', height: 30}}
-          onPress={this._userInfo}>
-          <Text style={{textAlign: 'center', backgroundColor: 'blue', width: 100}}>UserInfo</Text>
-        </TouchableOpacity>
 
-        <View style={{width: '80%', height: 330, alignItems: 'center'}}>
+        <View>
+          <TouchableOpacity
+            style={{ alignItems: 'center' }}
+            onPress={this.onPressLogout}
+          >
+            <Text style={styles.button}>LotOut</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{ alignItems: 'center' }}
+            onPress={this.clear}
+          >
+            <Text style={styles.button}>Reset</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{ alignItems: 'center' }}
+            onPress={this.userInfo}
+          >
+            <Text style={styles.button}>UserInfo</Text>
+          </TouchableOpacity>
+        </View>
+
+        <View style={{ width: '80%', height: 330, alignItems: 'center' }}>
           <Text>UserInfo</Text>
           <TextInput
             style={styles.userInfo}
             pointerEvents="none"
-            multiline={true}
+            multiline
             numberOfLines={22}
             editable={false}
             maxHeight={300}
-            value={this.state.userInfo}/>
+            value={userInfo}
+          />
         </View>
       </View>
     );
@@ -140,7 +143,7 @@ export default class ReactNativeKakaoExample extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection:'column',
+    flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
@@ -157,6 +160,12 @@ const styles = StyleSheet.create({
   },
   kakaoButton: {
     width: 200,
+  },
+  button: {
+    textAlign: 'center',
+    backgroundColor: 'yellow',
+    width: 200,
+    height: 80,
   },
   userInfo: {
     flex: 1,

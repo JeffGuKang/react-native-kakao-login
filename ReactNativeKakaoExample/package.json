@@ -7,7 +7,8 @@
     "test": "jest",
     "clean": "watchman watch-del-all && rm -fr $TMPDIR/react-* && npm cache clean --force && rm -rf node_modules && yarn install && cd android && ./gradlew clean",
     "ios": "react-native run-ios",
-    "android": "react-native run-android"
+    "android": "react-native run-android",
+    "lint": "eslint *.js **/*.js"
   },
   "dependencies": {
     "react": "16.6.3",
@@ -18,7 +19,13 @@
     "@babel/core": "^7.0.0",
     "@babel/preset-flow": "^7.0.0",
     "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
     "babel-jest": "^23.4.2",
+    "eslint": "^5.11.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.12.2",
     "jest": "21.2.1",
     "metro-react-native-babel-preset": "^0.51.1",
     "react-test-renderer": "16.6.3"
