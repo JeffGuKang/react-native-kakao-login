@@ -15,7 +15,7 @@ import {
 import RNKakao from 'react-native-kakao';
 
 // eslint-disable-next-line import/no-unresolved
-const KAKAO_BUTTON_IMG = require('./assets/images/kakaologinbtn.png');
+const KAKAO_BUTTON_IMG = require('./assets/images/kakao_login_btn.png');
 
 export default class ReactNativeKakaoExample extends Component {
   constructor(props) {
@@ -26,46 +26,43 @@ export default class ReactNativeKakaoExample extends Component {
     };
   }
 
-  kakaoLogin = () => {
-    RNKakao.login()``
-      .then((result) => {
-        this.setState({
-          userInfo: JSON.stringify(result)
-        });
-      })
-      .catch((error) => {
-        this.setState({
-          userInfo: `Error: ${error}`
-        });
+  kakaoLogin = async () => {
+    try {
+      const result = await RNKakao.login();
+      this.setState({
+        userInfo: JSON.stringify(result)
       });
+    } catch (e) {
+      this.setState({
+        userInfo: `Error: ${e}`
+      });
+    }
   }
 
-  kakaoLogout = () => {
-    RNKakao.logout()
-      .then((result) => {
-        this.setState({
-          userInfo: JSON.stringify(result)
-        });
-      })
-      .catch((error) => {
-        this.setState({
-          userInfo: `Error: ${error}`
-        });
+  kakaoLogout = async () => {
+    try {
+      const result = await RNKakao.logout();
+      this.setState({
+        userInfo: JSON.stringify(result)
       });
+    } catch (e) {
+      this.setState({
+        userInfo: `Error: ${e}`
+      });
+    }
   }
 
-  userInfo = () => {
-    RNKakao.userInfo()
-      .then((result) => {
-        this.setState({
-          userInfo: JSON.stringify(result)
-        });
-      })
-      .catch((error) => {
-        this.setState({
-          userInfo: `Error: ${error}`
-        });
+  getUserInfo = async () => {
+    try {
+      const result = await RNKakao.userInfo();
+      this.setState({
+        userInfo: JSON.stringify(result)
       });
+    } catch (e) {
+      this.setState({
+        userInfo: `Error: ${e}`
+      });
+    }
   }
 
   onPressLogin = () => {
@@ -76,8 +73,8 @@ export default class ReactNativeKakaoExample extends Component {
     this.kakaoLogout();
   }
 
-  clear = () => {
-    this.setState({
+  clear = async () => {
+    await this.setState({
       userInfo: ''
     });
   }
@@ -90,7 +87,6 @@ export default class ReactNativeKakaoExample extends Component {
         <Text style={styles.welcome}>
           React Native Kakao
         </Text>
-        <Text style={styles.instructions} />
         <TouchableOpacity
           style={{ top: 15, alignItems: 'center' }}
           onPress={this.onPressLogin}
@@ -102,28 +98,28 @@ export default class ReactNativeKakaoExample extends Component {
           />
         </TouchableOpacity>
 
-        <View>
+        <View style={styles.buttonContainer}>
           <TouchableOpacity
-            style={{ alignItems: 'center' }}
+            style={[styles.button, { backgroundColor: 'red' }]}
             onPress={this.onPressLogout}
           >
-            <Text style={styles.button}>LotOut</Text>
+            <Text style={[styles.buttonText]}>LotOut</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            style={{ alignItems: 'center' }}
+            style={[styles.button, { backgroundColor: 'green' }]}
             onPress={this.clear}
           >
-            <Text style={styles.button}>Reset</Text>
+            <Text style={[styles.buttonText]}>Reset</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            style={{ alignItems: 'center' }}
-            onPress={this.userInfo}
+            style={[styles.button, { backgroundColor: 'blue' }]}
+            onPress={this.getUserInfo}
           >
-            <Text style={styles.button}>UserInfo</Text>
+            <Text style={[styles.buttonText]}>UserInfo</Text>
           </TouchableOpacity>
         </View>
 
-        <View style={{ width: '80%', height: 330, alignItems: 'center' }}>
+        <View style={{ width: '80%', height: 330, alignItems: 'center', marginTop: 10 }}>
           <Text>UserInfo</Text>
           <TextInput
             style={styles.userInfo}
@@ -161,11 +157,21 @@ const styles = StyleSheet.create({
   kakaoButton: {
     width: 200,
   },
+  buttonContainer: {
+    justifyContent: 'space-between',
+    height: 120,
+  },
   button: {
-    textAlign: 'center',
-    backgroundColor: 'yellow',
+    alignItems: 'center',
+    justifyContent: 'center',
     width: 200,
-    height: 80,
+    height: 34,
+  },
+  buttonText: {
+    textAlign: 'center',
+    fontWeight: 'bold',
+    color: 'white',
+    fontSize: 19,
   },
   userInfo: {
     flex: 1,
