@@ -94,13 +94,13 @@ def enableSeparateBuildPerCPUArchitecture = false
 def enableProguardInReleaseBuilds = false
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
 
     defaultConfig {
         applicationId "com.reactnativekakaoexample"
         minSdkVersion 16
-        targetSdkVersion 23
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         ndk {
@@ -137,15 +137,11 @@ android {
 }
 
 dependencies {
-    compile project(':react-native-kakao')
-//    compile 'com.android.support:multidex:1.0.0'
-    compile (project(':react-native-kakao')) {
-      exclude module: 'support-v4'
-//        exclude module: 'support-v7'
-    }
-    compile fileTree(dir: "libs", include: ["*.jar"])
-    compile "com.android.support:appcompat-v7:23.0.1"
-    compile "com.facebook.react:react-native:+"  // From node_modules
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "com.android.support:appcompat-v7:28.0.0"
+    implementation "com.facebook.react:react-native:+"
+    // From node_modules
+    implementation project(':react-native-kakao')
 }
 
 // Run this once to be able to run the application with BUCK
