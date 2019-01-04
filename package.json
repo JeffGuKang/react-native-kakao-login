@@ -1,11 +1,20 @@
 {
   "name": "react-native-kakao",
-  "version": "0.1.1",
-  "description": "Kakao module(package) for React Native",
+  "version": "0.2.0",
+  "description": "Kakao login module(package) for React Native",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "react-native",
+    "kakao",
+    "login",
+    "kakao-signin",
+    "카카오",
+    "로그인",
+    "리엑트 네이티브"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JeffGuKang/react-native-kakao.git"
@@ -16,10 +25,8 @@
     "url": "https://github.com/JeffGuKang/react-native-kakao/issues"
   },
   "homepage": "https://github.com/JeffGuKang/react-native-kakao#readme",
-  "dependencies": {
-    "react": "16.2.0",
-    "react-native": ">0.44.3"
-  },
-  "devDependencies": {    
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
   }
 }
