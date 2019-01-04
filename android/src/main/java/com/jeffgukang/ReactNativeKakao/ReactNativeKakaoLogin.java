@@ -67,7 +67,7 @@ public class ReactNativeKakaoLogin {
         this.sessionCallback = new SessionCallback(promise);
         Session.getCurrentSession().clearCallbacks();
         Session.getCurrentSession().addCallback(sessionCallback);
-        Session.getCurrentSession().open(AuthType.KAKAO_TALK, currentActivity);
+        Session.getCurrentSession().open(AuthType.KAKAO_ACCOUNT, currentActivity); // KAKAO_ACCOUNT 정상 동작 확인
 //        Session.getCurrentSession().checkAndImplicitOpen();
     }
 
@@ -201,6 +201,15 @@ public class ReactNativeKakaoLogin {
         public KakaoSDKAdapter(Activity activity) {
             this.currentActivity = activity;
         }
+
+        // TODO: Activity
+//        @Override
+//        protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//            if (Session.getCurrentSession().handleActivityResult(requestCode, resultCode, data)) {
+//                return;
+//            }
+//            super.onActivityResult(requestCode, resultCode, data);
+//        }
 
         @Override
         public ISessionConfig getSessionConfig() {

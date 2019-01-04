@@ -186,6 +186,10 @@ Recommend test on real device instead of simulator. Latest Kakao SDK is not supp
 
 ### Android
 
+! 현재 안드로이드는 카카오 이메일, 패스워드 로그인 방식만 지원중입니다.
+
+[Official](https://developers.kakao.com/docs/android/getting-started#%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%84%B1)
+
 Add maven to `android/build.gradle`.
 
 ```js
@@ -195,16 +199,6 @@ subprojects {
         maven { url 'http://devrepo.kakao.com:8088/nexus/content/groups/public/' }
     }
 }
-```
-
-Add your app key in `AndroidManifest.xml`.
-
-```xml
-<application>
-  <meta-data
-      android:name="com.kakao.sdk.AppKey"
-      android:value="YOUR_APP_KEY" />
-      ...
 ```
 
 Add dependencies to `android/app/build.gradle`.
@@ -220,6 +214,16 @@ dependencies {
 }
 ```
 
+Add your app key in `AndroidManifest.xml`.
+
+```xml
+<application>
+  <meta-data
+      android:name="com.kakao.sdk.AppKey"
+      android:value="YOUR_APP_KEY" />
+      ...
+```
+
 `settings.gradle` will be set automatically.
 
 ```js
@@ -227,8 +231,18 @@ include ':react-native-kakao'
 project(':react-native-kakao').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-kakao/android')
 ```
 
+#### Key hash
+Do not forget adding debug or release key hash for test. [Official](https://developers.kakao.com/docs/android/getting-started#키해시-등록)
+
+OS X, Linux
+
+```js
+keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore -storepass android -keypass android | openssl sha1 -binary | openssl base64
+```
+
 ### TO DO
 
+- [ ] Android KakaoTalk login
 - [ ] dynamic agreement(https://developers.kakao.com/docs/android/user-management#동적동의)
 
 ### Troubleshooting
