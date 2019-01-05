@@ -5,7 +5,7 @@ Tested React Native 0.57v
 
 ## Introduction
 
-React Native module for using kakao login sdk.
+React Native module for using KakaoTalk login sdk.
 
 ## Installation
 
@@ -186,8 +186,6 @@ Recommend test on real device instead of simulator. Latest Kakao SDK is not supp
 
 ### Android
 
-! 현재 안드로이드는 카카오 이메일, 패스워드 로그인 방식만 지원중입니다.
-
 [Official](https://developers.kakao.com/docs/android/getting-started#%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%84%B1)
 
 Add maven to `android/build.gradle`.
@@ -242,7 +240,6 @@ keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore -
 
 ### TO DO
 
-- [ ] Android KakaoTalk login
 - [ ] dynamic agreement(https://developers.kakao.com/docs/android/user-management#동적동의)
 
 ### Troubleshooting
