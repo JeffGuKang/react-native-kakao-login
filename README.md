@@ -212,7 +212,7 @@ dependencies {
 }
 ```
 
-Add your app key in `AndroidManifest.xml`.
+Add your app key in `AndroidManifest.xml`. Do not need to add `KakaoWebViewActivity`.
 
 ```xml
 <application>
