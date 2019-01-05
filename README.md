@@ -186,6 +186,8 @@ Recommend test on real device instead of simulator. Latest Kakao SDK is not supp
 
 ### Android
 
+Android is made based on [helpkang's source](https://github.com/helpkang/react-native-kakao-login/blob/master/android/src/main/java/com/helpkang/kakaologin/KakaoLoginPackage.java)
+
 [Official](https://developers.kakao.com/docs/android/getting-started#%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%84%B1)
 
 Add maven to `android/build.gradle`.
