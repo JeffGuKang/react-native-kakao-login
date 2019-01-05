@@ -67,8 +67,7 @@ public class ReactNativeKakaoLogin {
         this.sessionCallback = new SessionCallback(promise);
         Session.getCurrentSession().clearCallbacks();
         Session.getCurrentSession().addCallback(sessionCallback);
-        Session.getCurrentSession().open(AuthType.KAKAO_ACCOUNT, currentActivity); // KAKAO_ACCOUNT 정상 동작 확인
-//        Session.getCurrentSession().checkAndImplicitOpen();
+        Session.getCurrentSession().open(AuthType.KAKAO_TALK, currentActivity); // KAKAO_ACCOUNT 정상 동작 확인
     }
 
     /**
@@ -171,7 +170,7 @@ public class ReactNativeKakaoLogin {
         @Override
         public void onSessionOpenFailed(KakaoException exception) {
             if (exception != null) {
-                Log.v(LOG_TAG, "kakao : onSessionOpenFailed" + exception.toString());
+                Log.v(LOG_TAG, "kakao : onSessionOpenFailed: " + exception.toString());
             }
         }
     }
@@ -202,15 +201,6 @@ public class ReactNativeKakaoLogin {
             this.currentActivity = activity;
         }
 
-        // TODO: Activity
-//        @Override
-//        protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//            if (Session.getCurrentSession().handleActivityResult(requestCode, resultCode, data)) {
-//                return;
-//            }
-//            super.onActivityResult(requestCode, resultCode, data);
-//        }
-
         @Override
         public ISessionConfig getSessionConfig() {
             return new ISessionConfig() {
@@ -218,7 +208,7 @@ public class ReactNativeKakaoLogin {
                 // 로그인시 인증받을 타입을 지정한다. 지정하지 않을 시 가능한 모든 옵션이 지정된다.
                  @Override
                  public AuthType[] getAuthTypes() {
-                     return new AuthType[]{AuthType.KAKAO_LOGIN_ALL};
+                     return new AuthType[]{AuthType.KAKAO_TALK};
                  }
 
                 @Override
@@ -250,6 +240,7 @@ public class ReactNativeKakaoLogin {
                 public Context getApplicationContext() {
                     return currentActivity.getApplicationContext();
                 }
+
             };
         }
     }
