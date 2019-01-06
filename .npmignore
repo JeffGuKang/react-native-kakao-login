@@ -1,1 +1,10 @@
-.ides
+.DS_Store
+
+node_modules/
+src/**/*.ts
+src/**/*.js.map
+test
+
+tools/
+
+ReactNativeKakaoExample/

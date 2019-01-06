@@ -1,11 +1,16 @@
 package com.jeffgukang.ReactNativeKakao;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.util.Log;
 
+import com.facebook.react.bridge.ActivityEventListener;
+import com.facebook.react.bridge.BaseActivityEventListener;
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
+import com.kakao.auth.Session;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -20,10 +25,23 @@ public class ReactNativeKakaoModule extends ReactContextBaseJavaModule {
 
   private ReactNativeKakaoLogin kakaoLogin;
 
+  private final ActivityEventListener mActivityEventListener = new BaseActivityEventListener() {
+    @Override
+    public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
+      Log.v("kakao", "onActivityResult");
+
+      if (Session.getCurrentSession().handleActivityResult(requestCode, resultCode, data)) {
+        return;
+      }
+    }
+  };
+
   public ReactNativeKakaoModule(ReactApplicationContext reactContext) {
     super(reactContext);
+    reactContext.addActivityEventListener(mActivityEventListener);
     if( this.kakaoLogin != null) return;
     this.kakaoLogin= new ReactNativeKakaoLogin(reactContext);
+
   }
 
   @Override
@@ -55,5 +73,4 @@ public class ReactNativeKakaoModule extends ReactContextBaseJavaModule {
   public void userInfo(Promise promise) {
     kakaoLogin.userInfo(promise);
   }
-
 }
