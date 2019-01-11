@@ -1,17 +1,18 @@
 # React Native Kakao
 
-Supported operating systems are >= Android 4.1 (API 16) and >= iOS 10.0.
-Tested React Native 0.57v
+리엑트 네이티브 카카오 로그인
 
-[Korean(한글) Document](./README_kor.md)
+안드로이드 >= 4.1
+iOS >= 10.0
+React Native는 0.57 버전에서 테스트되었습니다.
 
-## Introduction
+## 소개
 
-React Native module for using KakaoTalk login sdk.
+카카오 로그인 SDK를 사용한 리엑트 네이티브 모듈
 
-## Installation
+## 설치
 
-Auto install is supported by npm.
+NPM
 
 ```js
 npm install --save react-native-kakao
@@ -25,9 +26,9 @@ yarn add react-native-kakao
 react-native link react-native-kakao
 ```
 
-## Example
+## 예제
 
-Refer to ReactNativeKakaoExample.
+ReactNativeKakaoExample 폴더를 참조하세요.
 
 ```
 cd ReactNativeKakaoExample
@@ -37,7 +38,7 @@ or
 yarn 
 ```
 
-## Public APIs
+## 사용법
 
 ```js
 import RNKakao from 'react-native-kakao';
@@ -94,9 +95,10 @@ Example
   }
 ```
 
-#### - Auth Types
+#### - 인증 타입
 
-Support types of kakao login.
+지원예정이며 
+현재 KakaoTalk 고정입니다. 
 
 ```js
 RNKakao.KOAuthTypeTalk,
@@ -104,69 +106,70 @@ RNKakao.KOAuthTypeStory,
 RNKakao.KOAuthTypeAccount
 ```
 
-#### - User object
+#### - 유저 정보
 
-This is the typical information you obtain once the user sign in:
+로그인 후 받을 수 있는 유저정보입니다. 유저가 수락하지 않은 정보들은 null로 들어옵니다. 
 
 ```js
-{
-  id: <user id>
-  accessToken: <needed to access kakao API from the application>
-  nickname: <user nickname> // nullable
-  email: <user email> // nullable
-  profileImage: <user picture profile url> // nullable
-  profileImageThumnail: <user picture profile thumnail url> // nullable
-  ageRange: <user age range> // nullable
-  gender: <user gender> // nullable
-}
+  {
+    id: <user id>
+    accessToken: <needed to access kakao API from the application>
+    nickname: <user nickname> // nullable
+    email: <user email> // nullable
+    profileImage: <user picture profile url> // nullable
+    profileImageThumnail: <user picture profile thumnail url> // nullable
+    ageRange: <user age range> // nullable
+    gender: <user gender> // nullable
+  }
 ```
 
-## Project setup and initialization
+## 프로젝트 셋업 및 초기 설정
 
 ### iOS
 
 [Officail Kakao](https://developers.kakao.com/docs/ios#시작하기-개발환경)
 
-#### Install Kakao SDK
+- 카카오SDK 인스톨
 
-  1. Download [latest SDK](https://developers.kakao.com/sdk/latest-ios-sdk)
+  1. 최신 SDK [다운로드](https://developers.kakao.com/sdk/latest-ios-sdk)
 
-  2. Drag and drop framework.
-    
+  2. 드래그 앤 드롭을 해주세요. 
+  
       ![Drag&Drop](https://developers.kakao.com/assets/images/ios/drag_sdk.png)
       ![Settings](https://developers.kakao.com/assets/images/ios/drag_sdk_dialog.png)
 
-  3. Check target settings
-    
+  3. 타겟 세팅 체크
+
       ![build phase](https://developers.kakao.com/assets/images/ios/link_binary_with_libraries_confirm.png)
 
-  4. Add a argument `-all_load` in `Other Linker Flags`.
+  4. 빌드 설정 추가 `-all_load` in `Other Linker Flags`.
+
       ![argument](https://developers.kakao.com/assets/images/ios/other_linker_flags.png)
 
-#### Register your application in Kakao. [Official](https://developers.kakao.com/docs/ios#시작하기-앱-생성)
+- 카카오에 앱 등록 [Official](https://developers.kakao.com/docs/ios#시작하기-앱-생성)
 
-  1. Make new app [Official](https://developers.kakao.com/apps/new)
-    
+  1. 새로운 앱 만들기 [Make new app](https://developers.kakao.com/apps/new)
+
       ![makeapp](https://developers.kakao.com/assets/images/dashboard/dev_017.png)
 
-  2. Add iOS platform
+  2. iOS 플랫폼 추가
 
       ![addios](https://developers.kakao.com/assets/images/dashboard/dev_018.png)
 
-      iOS bundle id must same with XCode project's Bundle Identifier.
+     iOS bundle id must same with XCode project's Bundle Identifier.
 
-#### App settings in project
+- 프로젝트 앱 설정
 
-  1. Add URL types
-    
+  1. URL types 추가
+
       Add `kakao<yourappId>` in URL Schemes
       ![url types](https://developers.kakao.com/assets/images/ios/url_types.png)
 
-  2. Add native app key in plist
-    
+  2. plist에 네이티브 앱 키 추가
+
       ![addkakaoid](https://developers.kakao.com/assets/images/ios/setting_plist.png)
 
-#### Add codes to `AppDelegate.m`
+- `AppDelegate.m`에 코드 추가 
 
 ```js
   - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
@@ -196,13 +199,13 @@ This is the typical information you obtain once the user sign in:
   }
 ```
 
-### Android
+### 안드로이드(Android)
 
-Android is made based on [helpkang's source](https://github.com/helpkang/react-native-kakao-login)
+안드로이드 소스는 [helpkang](https://github.com/helpkang/react-native-kakao-login) 님의 소스를 기반으로 만들어졌습니다.
 
-[Official](https://developers.kakao.com/docs/android/getting-started#%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%84%B1)
+[공식 설정](https://developers.kakao.com/docs/android/getting-started#%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%84%B1)
 
-#### 1. Add maven to `android/build.gradle`.
+1. `android/build.gradle`에 maven 추가
 
 ```js
 subprojects {
@@ -213,9 +216,8 @@ subprojects {
 }
 ```
 
-#### 2. Add dependencies to `android/app/build.gradle`.
-
-It can be `compile` instead of `implementation` in gradle of low version.
+2. `android/app/build.gradle`에 디펜던시 추가
+Gradle 버전에 따라 `compile`이나 `implementation`을 사용하면 됩니다. 
 
 ```js
 dependencies {
@@ -227,7 +229,7 @@ dependencies {
 }
 ```
 
-#### 3. Add your app key in `AndroidManifest.xml`. Do not need to add `KakaoWebViewActivity`.
+3. `AndroidManifest.xml`에 앱키 등록. `KakaoWebViewActivity` 관련 설정은 추가하지 않아도 됩니다.
 
 ```xml
 <application>
@@ -237,15 +239,15 @@ dependencies {
       ...
 ```
 
-`settings.gradle` will be set automatically.
+`settings.gradle`은 자동설정 됩니다. 혹시나 react-native link 관련 중복이 발생하는 경우도 있으니 참고하세요.
 
 ```js
 include ':react-native-kakao'
 project(':react-native-kakao').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-kakao/android')
 ```
 
-#### Key hash
-Do not forget adding debug or release key hash for test. [Official](https://developers.kakao.com/docs/android/getting-started#키해시-등록)
+#### 키 해쉬
+테스트를 위해 개발환경의 키 해쉬를 등록해야합니다. [공식문서](https://developers.kakao.com/docs/android/getting-started#키해시-등록)
 
 OS X, Linux
 
@@ -265,7 +267,7 @@ Recommend run ReactNativeKakaoExample.
 
 ##### Build Error: linker, arm64, x86_64
 
-Check Target Membership in KakaoOpenSDK.framework you added. 
+추가한 KakaoOpenSDK.framewrok 를 눌러 Target Membership 체크가 정상적으로 되어 있는지 확인한다.
 
 ## Licence
 
