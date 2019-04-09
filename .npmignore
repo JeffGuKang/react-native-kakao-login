@@ -7,4 +7,16 @@ test
 
 tools/
 
-ReactNativeKakaoExample/
+node_modules/**/*
+build
+ReactNativeKakao.xcodeproj/xcuserdata/**/*
+ReactNativeKakao.xcodeproj/project.xcworkspace/**/*
+.idea
+.gradle/
+gradlew
+gradlew.bat
+gradle/
+*.properties
+*.iml
+npm-debug.log
+Examples/
