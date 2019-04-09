@@ -115,6 +115,25 @@ RCT_REMAP_METHOD(userInfo,
 	[self userInfoRequestResolve:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject];
 }
 
+/**
+ Logout
+ */
+RCT_REMAP_METHOD(logout,
+				 logoutWithResolver:(RCTPromiseResolveBlock)resolve
+				 logoutWithRejecter:(RCTPromiseRejectBlock)reject)
+{
+	[[KOSession sharedSession] logoutAndCloseWithCompletionHandler:^(BOOL success, NSError *error) {
+		if (error) {
+			reject(@"RNKakao", @"logout error", error);
+		} else {
+			NSMutableDictionary *response = [NSMutableDictionary dictionary];
+			[response setValue:@"Logged out" forKey:@"success"];
+			
+			resolve(response);
+		}
+	}];
+}
+
 /*!
  Related in user information permission: https://developers.kakao.com
  */

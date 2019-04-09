@@ -32,9 +32,9 @@ Refer to ReactNativeKakaoExample.
 ```
 cd ReactNativeKakaoExample
 
-npm install 
+npm install
 or
-yarn 
+yarn
 ```
 
 ## Public APIs
@@ -132,12 +132,12 @@ This is the typical information you obtain once the user sign in:
   1. Download [latest SDK](https://developers.kakao.com/sdk/latest-ios-sdk)
 
   2. Drag and drop framework.
-    
+
       ![Drag&Drop](https://developers.kakao.com/assets/images/ios/drag_sdk.png)
       ![Settings](https://developers.kakao.com/assets/images/ios/drag_sdk_dialog.png)
 
   3. Check target settings
-    
+
       ![build phase](https://developers.kakao.com/assets/images/ios/link_binary_with_libraries_confirm.png)
 
   4. Add a argument `-all_load` in `Other Linker Flags`.
@@ -146,7 +146,7 @@ This is the typical information you obtain once the user sign in:
 #### Register your application in Kakao. [Official](https://developers.kakao.com/docs/ios#시작하기-앱-생성)
 
   1. Make new app [Official](https://developers.kakao.com/apps/new)
-    
+
       ![makeapp](https://developers.kakao.com/assets/images/dashboard/dev_017.png)
 
   2. Add iOS platform
@@ -158,12 +158,12 @@ This is the typical information you obtain once the user sign in:
 #### App settings in project
 
   1. Add URL types
-    
+
       Add `kakao<yourappId>` in URL Schemes
       ![url types](https://developers.kakao.com/assets/images/ios/url_types.png)
 
   2. Add native app key in plist
-    
+
       ![addkakaoid](https://developers.kakao.com/assets/images/ios/setting_plist.png)
 
 #### Add codes to `AppDelegate.m`
@@ -227,7 +227,7 @@ dependencies {
 }
 ```
 
-#### 3. Add your app key in `AndroidManifest.xml`. Do not need to add `KakaoWebViewActivity`.
+Add your AppKey in `AndroidManifest.xml`.
 
 ```xml
 <application>
@@ -235,6 +235,17 @@ dependencies {
       android:name="com.kakao.sdk.AppKey"
       android:value="YOUR_APP_KEY" />
       ...
+```
+
+Additionally,  to add activity `KakaoWebViewActivity` could be needed. [#5](https://github.com/JeffGuKang/react-native-kakao/issues/5)
+
+```xml
+<activity
+    android:name="com.kakao.auth.authorization.authcode.KakaoWebViewActivity"
+    android:launchMode="singleTop"
+    android:exported="false"
+    android:windowSoftInputMode="adjustResize">
+</activity>
 ```
 
 `settings.gradle` will be set automatically.
@@ -265,7 +276,7 @@ Recommend run ReactNativeKakaoExample.
 
 ##### Build Error: linker, arm64, x86_64
 
-Check Target Membership in KakaoOpenSDK.framework you added. 
+Check Target Membership in KakaoOpenSDK.framework you added.
 
 ## Licence
 
