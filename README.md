@@ -214,7 +214,7 @@ dependencies {
 }
 ```
 
-Add your app key in `AndroidManifest.xml`. Do not need to add `KakaoWebViewActivity`.
+Add your app key in `AndroidManifest.xml`.
 
 ```xml
 <application>
@@ -222,6 +222,17 @@ Add your app key in `AndroidManifest.xml`. Do not need to add `KakaoWebViewActiv
       android:name="com.kakao.sdk.AppKey"
       android:value="YOUR_APP_KEY" />
       ...
+```
+
+Additionally,  to add activity `KakaoWebViewActivity` could be needed. [#5](https://github.com/JeffGuKang/react-native-kakao/issues/5)
+
+```xml
+<activity
+    android:name="com.kakao.auth.authorization.authcode.KakaoWebViewActivity"
+    android:launchMode="singleTop"
+    android:exported="false"
+    android:windowSoftInputMode="adjustResize">
+</activity>
 ```
 
 `settings.gradle` will be set automatically.
