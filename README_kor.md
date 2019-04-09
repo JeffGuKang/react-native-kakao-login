@@ -33,9 +33,9 @@ ReactNativeKakaoExample 폴더를 참조하세요.
 ```
 cd ReactNativeKakaoExample
 
-npm install 
+npm install
 or
-yarn 
+yarn
 ```
 
 ## 사용법
@@ -97,8 +97,8 @@ Example
 
 #### - 인증 타입
 
-지원예정이며 
-현재 KakaoTalk 고정입니다. 
+지원예정이며
+현재 KakaoTalk 고정입니다.
 
 ```js
 RNKakao.KOAuthTypeTalk,
@@ -108,7 +108,7 @@ RNKakao.KOAuthTypeAccount
 
 #### - 유저 정보
 
-로그인 후 받을 수 있는 유저정보입니다. 유저가 수락하지 않은 정보들은 null로 들어옵니다. 
+로그인 후 받을 수 있는 유저정보입니다. 유저가 수락하지 않은 정보들은 null로 들어옵니다.
 
 ```js
   {
@@ -133,8 +133,8 @@ RNKakao.KOAuthTypeAccount
 
   1. 최신 SDK [다운로드](https://developers.kakao.com/sdk/latest-ios-sdk)
 
-  2. 드래그 앤 드롭을 해주세요. 
-  
+  2. 드래그 앤 드롭을 해주세요.
+
       ![Drag&Drop](https://developers.kakao.com/assets/images/ios/drag_sdk.png)
       ![Settings](https://developers.kakao.com/assets/images/ios/drag_sdk_dialog.png)
 
@@ -169,7 +169,7 @@ RNKakao.KOAuthTypeAccount
 
       ![addkakaoid](https://developers.kakao.com/assets/images/ios/setting_plist.png)
 
-- `AppDelegate.m`에 코드 추가 
+- `AppDelegate.m`에 코드 추가
 
 ```js
   - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
@@ -217,7 +217,7 @@ subprojects {
 ```
 
 2. `android/app/build.gradle`에 디펜던시 추가
-Gradle 버전에 따라 `compile`이나 `implementation`을 사용하면 됩니다. 
+Gradle 버전에 따라 `compile`이나 `implementation`을 사용하면 됩니다.
 
 ```js
 dependencies {
@@ -237,6 +237,17 @@ dependencies {
       android:name="com.kakao.sdk.AppKey"
       android:value="YOUR_APP_KEY" />
       ...
+```
+
+추가적으로,  `KakaoWebViewActivity` 관련 설정을 추가해야 하는 경우도 있습니다. (그냥 추가해 놓더라도 문제는 없습니다.) [#5](https://github.com/JeffGuKang/react-native-kakao/issues/5)
+
+```xml
+<activity
+    android:name="com.kakao.auth.authorization.authcode.KakaoWebViewActivity"
+    android:launchMode="singleTop"
+    android:exported="false"
+    android:windowSoftInputMode="adjustResize">
+</activity>
 ```
 
 `settings.gradle`은 자동설정 됩니다. 혹시나 react-native link 관련 중복이 발생하는 경우도 있으니 참고하세요.
