@@ -102,14 +102,24 @@ public class ReactNativeKakaoLogin {
         response.putDouble("id", userProfile.getId());
         response.putString("accessToken", Session.getCurrentSession().getAccessToken());
         response.putString("nickName", userProfile.getNickname());
-        response.putString("email", account.getEmail());
         response.putString("profileImage", userProfile.getProfileImagePath());
         response.putString("profileImageThumnail", userProfile.getThumbnailImagePath());
 //        response.putString("properties", String.valueOf(userProfile.getProperties()));
 
-        response.putString("gender", String.valueOf(account.getGender()));
-        response.putString("ageRange", String.valueOf(account.getAgeRange()));
-        response.putString("birthday", account.getBirthday());
+        if (account != null) {
+            if (account.getEmail() != null) {
+                response.putString("email", account.getEmail());
+            }
+            if (account.getGender() != null) {
+                response.putString("gender", String.valueOf(account.getGender()));
+            }
+            if (account.getAgeRange() != null) {
+                response.putString("ageRange", String.valueOf(account.getAgeRange()));
+            }
+            if (account.getBirthday() != null) {
+                response.putString("birthday", account.getBirthday());
+            }
+        }
 
         return response;
     }
