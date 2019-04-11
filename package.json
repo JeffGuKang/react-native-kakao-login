@@ -1,6 +1,6 @@
 {
   "name": "react-native-kakao",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Kakao login module(package) for React Native",
   "main": "index.js",
   "scripts": {
