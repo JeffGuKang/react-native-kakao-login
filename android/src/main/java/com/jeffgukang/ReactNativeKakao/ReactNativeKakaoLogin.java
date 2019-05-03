@@ -103,7 +103,7 @@ public class ReactNativeKakaoLogin {
         response.putString("accessToken", Session.getCurrentSession().getAccessToken());
         response.putString("nickName", userProfile.getNickname());
         response.putString("profileImage", userProfile.getProfileImagePath());
-        response.putString("profileImageThumnail", userProfile.getThumbnailImagePath());
+        response.putString("profileImageThumbnail", userProfile.getThumbnailImagePath());
 //        response.putString("properties", String.valueOf(userProfile.getProperties()));
 
         if (account != null) {
