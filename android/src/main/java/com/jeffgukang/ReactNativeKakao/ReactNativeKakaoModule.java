@@ -30,8 +30,13 @@ public class ReactNativeKakaoModule extends ReactContextBaseJavaModule {
     public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
       Log.v("kakao", "onActivityResult");
 
-      if (Session.getCurrentSession().handleActivityResult(requestCode, resultCode, data)) {
-        return;
+      try {
+        if (Session.getCurrentSession().handleActivityResult(requestCode, resultCode, data)) {
+          return;
+        }
+      } catch(java.lang.IllegalStateException e) {
+        Log.e("kakao", "this event is not for kakao", e);
+        kakaoLogin.initialize();
       }
     }
   };

@@ -45,7 +45,7 @@ public class ReactNativeKakaoLogin {
         this.reactApplicationContext = context;
     }
 
-    private void initialize(){
+    public void initialize(){
         if(!init){
             Log.v(LOG_TAG, "kakao : initialize");
             currentActivity = reactApplicationContext.getCurrentActivity();
