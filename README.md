@@ -1,9 +1,12 @@
 # React Native Kakao
 
+![RNKakao](./screenshots/main.png)
+
 Supported operating systems are >= Android 4.1 (API 16) and >= iOS 10.0.
 Tested React Native 0.57v
 
-[Korean(한글) Document](./README_kor.md)
+한글 문서: [Korean(한글) Document](./README_kor.md)
+
 
 ## Introduction
 
@@ -267,6 +270,7 @@ keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore -
 ### TO DO
 
 - [ ] dynamic agreement(https://developers.kakao.com/docs/android/user-management#동적동의)
+- [v] Apply TypeScript
 
 ### Troubleshooting
 
