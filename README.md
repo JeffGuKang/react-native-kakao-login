@@ -282,6 +282,11 @@ Recommend run ReactNativeKakaoExample.
 
 Check Target Membership in KakaoOpenSDK.framework you added.
 
+### Contributors
+
+- [QuadFlask](https://github.com/QuadFlask)
+- [JB Paul](https://github.com/yjb94)
+
 ## Licence
 
 (MIT)
