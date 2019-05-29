@@ -1,6 +1,6 @@
 # React Native Kakao
 
-![RNKakao](./screenshots/main.png)
+<img src="./screenshots/main.png" alt="RNKakao" width="200"/>
 
 Supported operating systems are >= Android 4.1 (API 16) and >= iOS 10.0.
 Tested React Native 0.57v
