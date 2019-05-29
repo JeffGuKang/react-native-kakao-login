@@ -4,7 +4,9 @@
   "description": "Kakao login module(package) for React Native",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "readypublish": "cp README** ../",
+    "publish": "npm publish"
   },
   "keywords": [
     "react-native",

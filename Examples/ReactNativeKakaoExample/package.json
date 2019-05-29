@@ -1,6 +1,6 @@
 {
   "name": "ReactNativeKakaoExample",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "start": "react-native start",
@@ -13,7 +13,7 @@
   "dependencies": {
     "react": "16.6.3",
     "react-native": "^0.57.8",
-    "react-native-kakao": "file:../.."
+    "react-native-kakao": "file:../../rn-kakao"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
