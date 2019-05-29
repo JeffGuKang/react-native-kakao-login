@@ -1,6 +1,6 @@
 # React Native Kakao
 
-![RNKakao](./screenshots/main.png)
+<img src="./screenshots/main.png" alt="RNKakao" width="200"/>
 
 리엑트 네이티브 카카오 로그인
 
