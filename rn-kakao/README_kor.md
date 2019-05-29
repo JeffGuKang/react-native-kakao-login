@@ -1,5 +1,7 @@
 # React Native Kakao
 
+![RNKakao](./screenshots/main.png)
+
 리엑트 네이티브 카카오 로그인
 
 안드로이드 >= 4.1
@@ -269,6 +271,7 @@ keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore -
 ### TO DO
 
 - [ ] dynamic agreement(https://developers.kakao.com/docs/android/user-management#동적동의)
+- [v] TypeScript 적용
 
 ### Troubleshooting
 
