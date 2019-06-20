@@ -201,6 +201,24 @@ RNKakao.KOAuthTypeAccount
   }
 ```
 
+#### 토큰 자동 갱신
+
+https://developers.kakao.com/docs/ios/user-management#토큰-주기적-갱신
+
+AppDelegate.m
+
+```
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    ...
+    [KOSession sharedSession].automaticPeriodicRefresh = YES;
+}
+
+- (void)applicationDidEnterBackground:(UIApplication *)application {
+    ...
+    [KOSession handleDidEnterBackground];
+}
+```
+
 ### 안드로이드(Android)
 
 안드로이드 소스는 [helpkang](https://github.com/helpkang/react-native-kakao-login) 님의 소스를 기반으로 만들어졌습니다.

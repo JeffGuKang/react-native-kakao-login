@@ -199,6 +199,24 @@ This is the typical information you obtain once the user sign in:
   }
 ```
 
+#### Auto Refresh Token
+
+https://developers.kakao.com/docs/ios/user-management#토큰-주기적-갱신
+
+AppDelegate
+
+```
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    ...
+    [KOSession sharedSession].automaticPeriodicRefresh = YES;
+}
+
+- (void)applicationDidEnterBackground:(UIApplication *)application {
+    ...
+    [KOSession handleDidEnterBackground];
+}
+```
+
 ### Android
 
 Android is made based on [helpkang's source](https://github.com/helpkang/react-native-kakao-login)
