@@ -164,7 +164,7 @@ RNKakao.KOAuthTypeAccount
 
   1. URL types 추가
 
-      Add `kakao<yourappId>` in URL Schemes
+      Add `kakao<네이티브앱키>` in URL Schemes
       ![url types](https://developers.kakao.com/assets/images/ios/url_types.png)
 
   2. plist에 네이티브 앱 키 추가
