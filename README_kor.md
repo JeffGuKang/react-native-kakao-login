@@ -99,8 +99,8 @@ Example
 
 #### - 인증 타입
 
-지원예정이며
-현재 KakaoTalk 고정입니다.
+선택적 인증 타입을 지원예정이며
+현재는 모두 지원합니다.
 
 ```js
 RNKakao.KOAuthTypeTalk,
