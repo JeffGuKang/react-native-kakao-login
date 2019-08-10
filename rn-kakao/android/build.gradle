@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 
 def KAKAO_SDK_VERSION = "1.15.1"
+def SUPPORT_LIB_VERSION = rootProject.hasProperty('supportLibVersion') ? rootProject.supportLibVersion : "23.+"
 
 android {
   compileSdkVersion rootProject.ext.hasProperty('compileSdkVersion') ? rootProject.ext.compileSdkVersion : 23
@@ -28,6 +29,6 @@ repositories {
 
 dependencies {
   implementation 'com.facebook.react:react-native:+'
-  implementation 'com.android.support:appcompat-v7:23.+'
+  implementation 'com.android.support:appcompat-v7:${SUPPORT_LIB_VERSION}'
   implementation group: 'com.kakao.sdk', name: 'usermgmt', version: KAKAO_SDK_VERSION
 }
