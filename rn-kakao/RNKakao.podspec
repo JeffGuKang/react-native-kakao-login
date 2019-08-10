@@ -12,5 +12,7 @@ Pod::Spec.new do |s|
   s.authors      = { "jeffgukang" => "" }
   s.source       = { :git => "https://github.com/JeffGuKang/react-native-kakao", :tag => 'v#{version}'}
   s.source_files = 'ios/ReactNativekakao/*.{h,m}'
-  s.platform     = :ios, "8.0"  
+  s.platform     = :ios, "8.0"
+  s.vendored_frameworks = 'ios/KakaoOpenSDK.framework'
+  s.dependency 'React-Core'
 end
