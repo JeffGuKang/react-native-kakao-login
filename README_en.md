@@ -244,21 +244,9 @@ subprojects {
 }
 ```
 
-#### 2. Add dependencies to `android/app/build.gradle`.
+#### 2. Edit `AndroidManifest.xml`
 
-It can be `compile` instead of `implementation` in gradle of low version.
-
-```js
-dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation "com.android.support:appcompat-v7:28.0.0"
-    implementation "com.facebook.react:react-native:+"
-    // From node_modules
-    implementation project(':react-native-kakao') // Check this line.
-}
-```
-
-Add your AppKey in `AndroidManifest.xml`.
+Add your AppKey in `AndroidManifest.xml`
 
 ```xml
 <application>
@@ -277,13 +265,6 @@ Additionally,  to add activity `KakaoWebViewActivity` could be needed. [#5](http
     android:exported="false"
     android:windowSoftInputMode="adjustResize">
 </activity>
-```
-
-`settings.gradle` will be set automatically.
-
-```js
-include ':react-native-kakao'
-project(':react-native-kakao').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-kakao/android')
 ```
 
 #### Key hash

@@ -1,5 +1,5 @@
 {
-  "name": "ReactNativeKakaoExample",
+  "name": "react-native-kakao-example",
   "version": "1.1.0",
   "private": true,
   "scripts": {
@@ -13,19 +13,19 @@
   "dependencies": {
     "react": "16.8.6",
     "react-native": "0.60.4",
-    "react-native-kakao": "file:../../rn-kakao"
+    "rn-kakao-login": "file:../../rn-kakao"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/runtime": "^7.5.5",
     "@react-native-community/eslint-config": "^0.0.5",
+    "babel-eslint": "^10.0.1",
     "babel-jest": "^24.8.0",
+    "eslint": "^5.11.1",
     "jest": "^24.8.0",
     "metro-react-native-babel-preset": "^0.55.0",
-    "react-test-renderer": "16.8.6",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.11.1",
-    "eslint-config-airbnb": "^17.1.0"  
+    "prettier": "^1.18.2",
+    "react-test-renderer": "16.8.6"
   },
   "jest": {
     "preset": "react-native"

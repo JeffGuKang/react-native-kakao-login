@@ -12,7 +12,7 @@ import {
   Image,
   TextInput,
 } from 'react-native';
-import RNKakao from 'react-native-kakao';
+import RNKakao from 'rn-kakao-login';
 
 // eslint-disable-next-line import/no-unresolved
 const KAKAO_BUTTON_IMG = require('./assets/images/kakao_login_btn.png');

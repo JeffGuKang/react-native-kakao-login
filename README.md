@@ -57,7 +57,7 @@ yarn
 ## 사용법
 
 ```js
-import RNKakao from 'react-native-kakao';
+import RNKakao from 'rn-kakao-login';
 ```
 
 ### Kakao Login
