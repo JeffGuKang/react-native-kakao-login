@@ -1,1 +1,1 @@
-cd $APPCENTER_SOURCE_DIRECTORY && pod installgit
+# cd $APPCENTER_SOURCE_DIRECTORY && pod install
