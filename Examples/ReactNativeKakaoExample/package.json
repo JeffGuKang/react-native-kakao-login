@@ -13,7 +13,7 @@
   "dependencies": {
     "react": "16.8.6",
     "react-native": "0.60.4",
-    "rn-kakao-login": "file:../../rn-kakao"
+    "rn-kakao-login": "file:./../../rn-kakao-login"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
