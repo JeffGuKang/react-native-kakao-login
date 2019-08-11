@@ -19,7 +19,7 @@ React Native는 0.60.0 버전 이상에서 테스트되었습니다.
 
 ## 설치
 
-rn-kakao-login > 2.0.0, React Natigve > 0.60.0 에서는 autolinking을 지원하므로 별도의 연결을 하지 않아도 됩니다. 
+rn-kakao-login > 2.0.0, React Native > 0.60.0 에서는 autolinking을 지원하므로 별도의 연결을 하지 않아도 됩니다. 
 
 NPM
 
