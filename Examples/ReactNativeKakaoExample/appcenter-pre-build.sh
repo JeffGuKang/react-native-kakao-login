@@ -1,2 +1,2 @@
-# echo "Pod install"
-# cd ios && pod install
+echo "Pod install"
+cd ios && pod install
