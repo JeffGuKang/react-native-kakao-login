@@ -5,7 +5,7 @@ export const KakaoLoginAuthType = {
   Talk: ReactNativeKakao.KOAuthTypeTalk,
   Story: ReactNativeKakao.KOAuthTypeStory,
   Account: ReactNativeKakao.KOAuthTypeAccount,
-}
+};
 
 export default ReactNativeKakao;
 
