@@ -56,7 +56,7 @@ node_modules
 
 /coverage
 /third-party
-yarn.lock
+# yarn.lock
 package-lock.json
 android/build
 
