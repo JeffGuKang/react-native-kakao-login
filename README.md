@@ -1,5 +1,8 @@
 # React Native Kakao Login(rn-kakao-login)
 
+Android: ![Android](https://build.appcenter.ms/v0.1/apps/6ef44ff8-32de-43c6-8e21-97017bcf405e/branches/master/badge)  
+iOS: ![iOS](https://build.appcenter.ms/v0.1/apps/a4726ca7-bf3e-46d0-80cc-b2c960ce984d/branches/master/badge)
+
 <img src="./screenshots/main.png" alt="RNKakao" width="200"/>
 
 English Document: [English](./README_en.md)
