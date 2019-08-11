@@ -69,7 +69,7 @@ import RNKakao from 'rn-kakao-login';
 [Official documentations](https://developers.kakao.com/docs/ios#사용자-관리-로그인).
 
 ```js
-RNKakao.login(authTypes)
+RNKakao.login()
 ```
 
 Example
