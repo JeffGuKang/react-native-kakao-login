@@ -18,4 +18,5 @@
 # echo "Install cocoapod 1.7.4"
 # sudo gem install cocoapods -v 1.7.4
 
+echo "Pod install"
 cd $APPCENTER_SOURCE_DIRECTORY && pod install
