@@ -15,5 +15,5 @@ ls $APPCENTER_SOURCE_DIRECTORY
 echo "APPCENTER_OUTPUT_DIRECTORY: " $APPCENTER_OUTPUT_DIRECTORY
 ls $APPCENTER_OUTPUT_DIRECTORY
 
-echo "Link rn-kakao-login folder"
-ln -s $APPCENTER_OUTPUT_DIRECTORY/rn-kakao-login ../../rn-kakao-login
+# echo "Link rn-kakao-login folder"
+# ln -s $APPCENTER_OUTPUT_DIRECTORY/rn-kakao-login ../../rn-kakao-login
