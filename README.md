@@ -150,7 +150,7 @@ RNKakao.KOAuthTypeAccount
 
 - 카카오SDK 인스톨
 
-version > 2.0 에서는 자동으로 인스톨하므로 별도의 프레임워크 등록 과정이 필요 없습니다. 
+  version > 2.0 에서는 자동으로 인스톨하므로 별도의 프레임워크 등록 과정이 필요 없습니다. 
 
   1. 빌드 설정 추가 `-all_load` in `Other Linker Flags`.
 
