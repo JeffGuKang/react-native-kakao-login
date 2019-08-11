@@ -12,9 +12,8 @@ import {
   Image,
   TextInput,
 } from 'react-native';
-import RNKakao from 'react-native-kakao';
+import RNKakao from 'rn-kakao-login';
 
-// eslint-disable-next-line import/no-unresolved
 const KAKAO_BUTTON_IMG = require('./assets/images/kakao_login_btn.png');
 
 export default class ReactNativeKakaoExample extends Component {
@@ -22,7 +21,7 @@ export default class ReactNativeKakaoExample extends Component {
     super(props);
 
     this.state = {
-      userInfo: ''
+      userInfo: '',
     };
   }
 
@@ -30,11 +29,11 @@ export default class ReactNativeKakaoExample extends Component {
     try {
       const result = await RNKakao.login();
       this.setState({
-        userInfo: JSON.stringify(result)
+        userInfo: JSON.stringify(result),
       });
     } catch (e) {
       this.setState({
-        userInfo: `Error: ${e}`
+        userInfo: `Error: ${e}`,
       });
     }
   }
@@ -43,11 +42,11 @@ export default class ReactNativeKakaoExample extends Component {
     try {
       const result = await RNKakao.logout();
       this.setState({
-        userInfo: JSON.stringify(result)
+        userInfo: JSON.stringify(result),
       });
     } catch (e) {
       this.setState({
-        userInfo: `Error: ${e}`
+        userInfo: `Error: ${e}`,
       });
     }
   }
@@ -56,11 +55,11 @@ export default class ReactNativeKakaoExample extends Component {
     try {
       const result = await RNKakao.userInfo();
       this.setState({
-        userInfo: JSON.stringify(result)
+        userInfo: JSON.stringify(result),
       });
     } catch (e) {
       this.setState({
-        userInfo: `Error: ${e}`
+        userInfo: `Error: ${e}`,
       });
     }
   }
@@ -75,7 +74,7 @@ export default class ReactNativeKakaoExample extends Component {
 
   clear = async () => {
     await this.setState({
-      userInfo: ''
+      userInfo: '',
     });
   }
 
@@ -179,5 +178,5 @@ const styles = StyleSheet.create({
     marginTop: 10,
     backgroundColor: 'grey',
     color: 'white',
-  }
+  },
 });

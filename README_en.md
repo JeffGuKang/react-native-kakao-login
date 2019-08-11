@@ -2,31 +2,46 @@
 
 <img src="./screenshots/main.png" alt="RNKakao" width="200"/>
 
-Supported operating systems are >= Android 4.1 (API 16) and >= iOS 10.0.
-Tested React Native 0.57v
-
 한글 문서: [Korean(한글) Document](./README.md)
 
+Kakao Login Library For React Native: rn-kakao-login
+
+Android >= 4.1
+iOS >= 10.0
+React Native > 0.60.0
 
 ## Introduction
 
-React Native module for using KakaoTalk login sdk.
+React Native library for using KakaoTalk login sdk.
 
 ## Installation
 
-Auto install is supported by npm.
+Autolinking enabled for React Natigve > 0.60.0 with rn-kakao-login > 2.0.0.
+
+NPM
 
 ```js
-npm install --save react-native-kakao
-react-native link react-native-kakao
+npm install --save rn-kakao-login
 ```
 
 Yarn
 
 ```js
-yarn add react-native-kakao
-react-native link react-native-kakao
+yarn add rn-kakao-login
 ```
+
+### iOS
+```
+cd ios && pod install
+```
+
+### Android
+
+Do not need extra process.
+
+### Done
+
+Auto install is supported by npm.
 
 ## Example
 
@@ -38,6 +53,8 @@ cd ReactNativeKakaoExample
 npm install
 or
 yarn
+
+cd ios && pod install
 ```
 
 ## Public APIs
@@ -132,18 +149,7 @@ This is the typical information you obtain once the user sign in:
 
 #### Install Kakao SDK
 
-  1. Download [latest SDK](https://developers.kakao.com/sdk/latest-ios-sdk)
-
-  2. Drag and drop framework.
-
-      ![Drag&Drop](https://developers.kakao.com/assets/images/ios/drag_sdk.png)
-      ![Settings](https://developers.kakao.com/assets/images/ios/drag_sdk_dialog.png)
-
-  3. Check target settings
-
-      ![build phase](https://developers.kakao.com/assets/images/ios/link_binary_with_libraries_confirm.png)
-
-  4. Add a argument `-all_load` in `Other Linker Flags`.
+  1. Add a argument `-all_load` in `Other Linker Flags`.
       ![argument](https://developers.kakao.com/assets/images/ios/other_linker_flags.png)
 
 #### Register your application in Kakao. [Official](https://developers.kakao.com/docs/ios#시작하기-앱-생성)
@@ -238,21 +244,9 @@ subprojects {
 }
 ```
 
-#### 2. Add dependencies to `android/app/build.gradle`.
+#### 2. Edit `AndroidManifest.xml`
 
-It can be `compile` instead of `implementation` in gradle of low version.
-
-```js
-dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation "com.android.support:appcompat-v7:28.0.0"
-    implementation "com.facebook.react:react-native:+"
-    // From node_modules
-    implementation project(':react-native-kakao') // Check this line.
-}
-```
-
-Add your AppKey in `AndroidManifest.xml`.
+Add your AppKey in `AndroidManifest.xml`
 
 ```xml
 <application>
@@ -273,13 +267,6 @@ Additionally,  to add activity `KakaoWebViewActivity` could be needed. [#5](http
 </activity>
 ```
 
-`settings.gradle` will be set automatically.
-
-```js
-include ':react-native-kakao'
-project(':react-native-kakao').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-kakao/android')
-```
-
 #### Key hash
 Do not forget adding debug or release key hash for test. [Official](https://developers.kakao.com/docs/android/getting-started#키해시-등록)
 
@@ -293,6 +280,7 @@ keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore -
 
 - [ ] dynamic agreement(https://developers.kakao.com/docs/android/user-management#동적동의)
 - [v] Apply TypeScript
+- [v] Apply Autolinking
 
 ### Troubleshooting
 
