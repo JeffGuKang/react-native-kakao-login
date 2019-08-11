@@ -1,1 +1,2 @@
-# cd $APPCENTER_SOURCE_DIRECTORY && pod install
+echo "Pod install"
+cd ios && pod install

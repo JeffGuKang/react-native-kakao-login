@@ -18,5 +18,5 @@
 # echo "Install cocoapod 1.7.4"
 # sudo gem install cocoapods -v 1.7.4
 
-echo "Pod install"
-cd ios && pod install
+# echo "Pod install"
+# cd ios && pod install
