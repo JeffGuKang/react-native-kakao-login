@@ -1,34 +1,46 @@
-# React Native Kakao
+# React Native Kakao Login(rn-kakao-login)
 
 <img src="./screenshots/main.png" alt="RNKakao" width="200"/>
 
 English Document: [English](./README_en.md)
 
-리엑트 네이티브 카카오 로그인
+리엑트 네이티브용 카카오 로그인 라이브러리: rn-kakao-login
 
 안드로이드 >= 4.1
 iOS >= 10.0
-React Native는 0.57 버전 이상에서 테스트되었습니다.
+React Native는 0.60.0 버전 이상에서 테스트되었습니다.
 
 ## 소개
 
-카카오 로그인 SDK를 사용한 리엑트 네이티브 모듈
+카카오 로그인 SDK를 사용한 리엑트 네이티브 카카오 로그인 라이브러리입니다. 
 
 ## 설치
+
+rn-kakao-login > 2.0.0, React Natigve > 0.60.0 에서는 autolinking을 지원하므로 별도의 연결을 하지 않아도 됩니다. 
 
 NPM
 
 ```js
-npm install --save react-native-kakao
-react-native link react-native-kakao
+npm install --save rn-kakao-login
 ```
 
 Yarn
 
 ```js
-yarn add react-native-kakao
-react-native link react-native-kakao
+yarn add rn-kakao-login
 ```
+
+### iOS
+```
+cd ios && pod install
+```
+
+### Android
+
+별도의 작업 필요 없음
+
+### Done
+
 
 ## 예제
 
@@ -135,18 +147,9 @@ RNKakao.KOAuthTypeAccount
 
 - 카카오SDK 인스톨
 
-  1. 최신 SDK [다운로드](https://developers.kakao.com/sdk/latest-ios-sdk)
+version > 2.0 에서는 자동으로 인스톨하므로 별도의 프레임워크 등록 과정이 필요 없습니다. 
 
-  2. 드래그 앤 드롭을 해주세요.
-
-      ![Drag&Drop](https://developers.kakao.com/assets/images/ios/drag_sdk.png)
-      ![Settings](https://developers.kakao.com/assets/images/ios/drag_sdk_dialog.png)
-
-  3. 타겟 세팅 체크
-
-      ![build phase](https://developers.kakao.com/assets/images/ios/link_binary_with_libraries_confirm.png)
-
-  4. 빌드 설정 추가 `-all_load` in `Other Linker Flags`.
+  1. 빌드 설정 추가 `-all_load` in `Other Linker Flags`.
 
       ![argument](https://developers.kakao.com/assets/images/ios/other_linker_flags.png)
 
@@ -223,35 +226,23 @@ AppDelegate
 
 ### Android
 
-안드로이드 소스는 [helpkang](https://github.com/helpkang/react-native-kakao-login) 님의 소스를 기반으로 만들어졌습니다.
+안드로이드 소스는 [helpkang](https://github.com/helpkang/react-native-kakao-login)을 기반으로 만들어졌습니다.
 
 [공식 설정](https://developers.kakao.com/docs/android/getting-started#%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%84%B1)
 
 1. `android/build.gradle`에 maven 추가
 
 ```js
-subprojects {
+allprojects {
     repositories {
         mavenCentral()
-        maven { url 'http://devrepo.kakao.com:8088/nexus/content/groups/public/' }
+        ...
+        maven { url 'http://devrepo.kakao.com:8088/nexus/content/groups/public/' } // 추가 
     }
 }
 ```
 
-2. `android/app/build.gradle`에 디펜던시 추가
-Gradle 버전에 따라 `compile`이나 `implementation`을 사용하면 됩니다.
-
-```js
-dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation "com.android.support:appcompat-v7:28.0.0"
-    implementation "com.facebook.react:react-native:+"
-    // From node_modules
-    implementation project(':react-native-kakao') // Check this line.
-}
-```
-
-3. `AndroidManifest.xml`에 앱키 등록. `KakaoWebViewActivity` 관련 설정은 추가하지 않아도 됩니다.
+3. `AndroidManifest.xml`에 앱키 등록.
 
 ```xml
 <application>
@@ -261,7 +252,7 @@ dependencies {
       ...
 ```
 
-추가적으로,  `KakaoWebViewActivity` 관련 설정을 추가해야 하는 경우도 있습니다. (그냥 추가해 놓더라도 문제는 없습니다.) [#5](https://github.com/JeffGuKang/react-native-kakao/issues/5)
+`KakaoWebViewActivity` 관련 문제가 발생한다면 아래 코드 역시 추가해주세요.  [#5](https://github.com/JeffGuKang/react-native-kakao/issues/5)
 
 ```xml
 <activity
@@ -270,13 +261,6 @@ dependencies {
     android:exported="false"
     android:windowSoftInputMode="adjustResize">
 </activity>
-```
-
-`settings.gradle`은 자동설정 됩니다. 혹시나 react-native link 관련 중복이 발생하는 경우도 있으니 참고하세요.
-
-```js
-include ':react-native-kakao'
-project(':react-native-kakao').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-kakao/android')
 ```
 
 #### 키 해쉬
@@ -292,6 +276,7 @@ keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore -
 
 - [ ] dynamic agreement(https://developers.kakao.com/docs/android/user-management#동적동의)
 - [v] TypeScript 적용
+- [v] Autolinking 적용 
 
 ### Troubleshooting
 
