@@ -267,6 +267,17 @@ allprojects {
 </activity>
 ```
 
+#### Proguard
+
+```
+-keep class com.kakao.** { *; }
+-keepattributes Signature
+-keepclassmembers class * {
+  public static <fields>;
+  public *;
+}
+-dontwarn android.support.v4.**,org.slf4j.**,com.google.android.gms.**
+```
 #### 키 해쉬
 테스트를 위해 개발환경의 키 해쉬를 등록해야합니다. [공식문서](https://developers.kakao.com/docs/android/getting-started#키해시-등록)
 
