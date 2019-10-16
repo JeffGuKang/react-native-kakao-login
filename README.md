@@ -289,7 +289,7 @@ keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore -
 
 ### TO DO
 
-- [ ] dynamic agreement(https://developers.kakao.com/docs/android/user-management#동적동의)
+- [ ] 이용중 동의 dynamic agreement(https://developers.kakao.com/docs/android/user-management#동적동의)
 - [v] TypeScript 적용
 - [v] Autolinking 적용 
 
