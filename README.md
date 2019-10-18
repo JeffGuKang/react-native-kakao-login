@@ -183,6 +183,11 @@ RNKakao.KOAuthTypeAccount
 - `AppDelegate.m`에 코드 추가
 
 ```js
+  #import <KakaoOpenSDK/KakaoOpenSDK.h>
+  
+  ...
+  
+  
   - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
                                          sourceApplication:(NSString *)sourceApplication
                                                 annotation:(id)annotation {
