@@ -147,7 +147,7 @@ RNKakao.KOAuthTypeAccount
 
 ### iOS
 
-[Officail Kakao](https://developers.kakao.com/docs/ios#시작하기-개발환경)
+[Official Kakao](https://developers.kakao.com/docs/ios#시작하기-개발환경)
 
 - 카카오SDK 인스톨
 
@@ -170,6 +170,9 @@ RNKakao.KOAuthTypeAccount
      iOS bundle id must same with XCode project's Bundle Identifier.
 
 - 프로젝트 앱 설정
+
+공식 설정 적용
+[Kakao SDK](https://developers.kakao.com/docs/ios#%EA%B0%9C%EB%B0%9C%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%84%A4%EC%A0%95) 
 
   1. URL types 추가
 
@@ -215,7 +218,7 @@ RNKakao.KOAuthTypeAccount
   }
 ```
 
-#### Auto Refresh Token
+#### Auto Refresh Token(Option)
 
 https://developers.kakao.com/docs/ios/user-management#토큰-주기적-갱신
 
