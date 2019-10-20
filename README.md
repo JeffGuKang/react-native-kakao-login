@@ -288,8 +288,18 @@ allprojects {
 ```
 #### 키 해쉬
 테스트를 위해 개발환경의 키 해쉬를 등록해야합니다. [공식문서](https://developers.kakao.com/docs/android/getting-started#키해시-등록)
+-keystore 옵션에 사용할 debug.keystore 경로를 입력해주세요.
 
 OS X, Linux
+
+android/app 폴더에 debug.keysotre가 있는 경우 (RN > 0.60 자동생성)
+default: `Xo8WBi6jzSxKDVR4drqm84yr9iU=`
+
+```sh
+keytool -exportcert -alias androiddebugkey -keystore android/app/debug.keystore -storepass android -keypass android | openssl sha1 -binary | openssl base64
+```
+
+android/app 폴더에 debug.keysotre가 없는 경우
 
 ```js
 keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore -storepass android -keypass android | openssl sha1 -binary | openssl base64
