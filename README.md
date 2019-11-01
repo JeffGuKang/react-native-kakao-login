@@ -313,13 +313,19 @@ keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore -
 
 ### Troubleshooting
 
-Recommend run ReactNativeKakaoExample.
+`Example` 폴더를 통해 예제를 먼저 돌려보세요.
+
+#### Android
+
+##### 로그인 후 아무 반응이 없을 때 
+
+키 해쉬가 잘 추가되었는지 확인해주세요.
 
 #### IOS
 
 ##### Build Error: linker, arm64, x86_64
 
-추가한 KakaoOpenSDK.framewrok 를 눌러 Target Membership 체크가 정상적으로 되어 있는지 확인한다.
+추가한 KakaoOpenSDK.framewrok 를 눌러 Target Membership 체크가 정상적으로 되어 있는지 확인해주세요.
 
 ### Contributors
 
