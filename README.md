@@ -321,6 +321,16 @@ keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore -
 
 키 해쉬가 잘 추가되었는지 확인해주세요.
 
+##### Google Sign In 후 
+
+google console에서 앱 서명란에 들어가 SHA-1 인증서 지문을 구글에서 다운받는다. 
+
+그 후 터미널 등을 통해 base64로 변경 후 카카오에 해쉬 키를 등록하면 된다. 
+
+`echo [SHA-1] | xxd -r -p | openssl base64`
+
+
+
 #### IOS
 
 ##### Build Error: linker, arm64, x86_64
