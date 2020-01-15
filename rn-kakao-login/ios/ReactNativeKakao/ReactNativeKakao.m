@@ -145,7 +145,7 @@ RCT_REMAP_METHOD(logout,
 			NSString *id = result.ID;
 			NSString *nickName = result.nickname;
 			NSURL *profileImage = result.profileImageURL;
-			NSURL *profileImageThumnail = result.thumbnailImageURL;
+			NSURL *profileImageThumbnail = result.thumbnailImageURL;
 			
 			// Additional Info (Optional)
 			KOUserMeAccount *account = result.account;
@@ -160,7 +160,7 @@ RCT_REMAP_METHOD(logout,
 			if (nickName) [userInfo setValue:nickName forKey:@"nickName"];
 			if (email) [userInfo setValue:email forKey:@"email"];
 			if (profileImage) [userInfo setValue:profileImage.absoluteString forKey:@"profileImage"];
-			if (profileImageThumnail) [userInfo setValue:profileImageThumnail.absoluteString forKey:@"profileImageThumnail"];
+			if (profileImageThumbnail) [userInfo setValue:profileImageThumbnail.absoluteString forKey:@"profileImageThumbnail"];
 			if (phoneNumber) [userInfo setValue:phoneNumber forKey:@"phoneNumber"];
 			if (displayId) [userInfo setValue:displayId forKey:@"displayId"];
 			
