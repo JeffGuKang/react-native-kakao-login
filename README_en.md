@@ -135,7 +135,7 @@ This is the typical information you obtain once the user sign in:
   nickname: <user nickname> // nullable
   email: <user email> // nullable
   profileImage: <user picture profile url> // nullable
-  profileImageThumnail: <user picture profile thumnail url> // nullable
+  profileImageThumbnail: <user picture profile thumbnail url> // nullable
   ageRange: <user age range> // nullable
   gender: <user gender> // nullable
 }
