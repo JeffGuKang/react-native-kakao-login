@@ -181,6 +181,8 @@ public class ReactNativeKakaoLogin {
         public void onSessionOpenFailed(KakaoException exception) {
             if (exception != null) {
                 Log.v(LOG_TAG, "kakao : onSessionOpenFailed: " + exception.toString());
+
+                this.promise.reject("onSessionOpenFailed", exception.getMessage(), exception);
             }
         }
     }
