@@ -20,7 +20,7 @@
 @interface KOTalkProfile : NSObject
 
 /// @abstract 카카오톡 닉네임
-@property(nonatomic, readonly) NSString *nickName;
+@property(nonatomic, readonly) NSString *nickname;
 
 /// @abstract 카카오톡 프로필 이미지 URL
 @property(nonatomic, readonly) NSString *profileImageURL;
@@ -32,7 +32,7 @@
 @property(nonatomic, readonly) NSString *countryISO;
 
 
-- (id)initWithNickname:(NSString *)nickName
+- (id)initWithNickname:(NSString *)nickname
        profileImageURL:(NSString *)profileImageURL
           thumbnailURL:(NSString *)thumbnailURL
             countryISO:(NSString *)countryISO;

@@ -52,7 +52,7 @@ extern NSString* convertOSPropertyTypeString(KOOSPropertyType type);
 @property (nonatomic, readonly, getter=isAppRegistered) BOOL appRegistered;
 
 /// @abstract 친구의 대표 프로필 닉네임. 앱 가입친구의 경우 앱에서 설정한 닉네임. 미가입친구의 경우 톡 또는 스토리의 닉네임
-@property (nonatomic, readonly) NSString *nickName;
+@property (nonatomic, readonly) NSString *nickname;
 
 /// @abstract 친구의 썸네일 이미지
 @property (nonatomic, readonly) NSString *thumbnailURL;

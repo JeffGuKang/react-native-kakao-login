@@ -28,7 +28,7 @@ typedef NS_ENUM(NSInteger, KOStoryProfileBirthdayType) {
 @interface KOStoryProfile : NSObject
 
 /// @abstract 카카오스토리 닉네임
-@property(nonatomic, readonly) NSString *nickName;
+@property(nonatomic, readonly) NSString *nickname;
 
 /// @abstract 카카오스토리 프로필 이미지 URL
 @property(nonatomic, readonly) NSString *profileImageURL;
@@ -49,7 +49,7 @@ typedef NS_ENUM(NSInteger, KOStoryProfileBirthdayType) {
 @property(nonatomic, readonly) NSString *permalink;
 
 
-- (id)initWithNickname:(NSString *)nickName
+- (id)initWithNickname:(NSString *)nickname
        profileImageURL:(NSString *)profileImageURL
           thumbnailURL:(NSString *)thumbnailURL
             bgImageURL:(NSString *)bgImageURL
