@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "lint": "eslint *.js **/*.js"
+    "lint": "eslint *.js **/*.js",
+    "release": "standard-version"
   },
   "keywords": [
     "react-native",
@@ -33,7 +34,8 @@
   "devDependencies": {
     "@react-native-community/eslint-config": "^0.0.5",
     "eslint": "5.11.1",
-    "jest": "^24.8.0"
+    "jest": "^24.8.0",
+    "standard-version": "^8.0.0"
   },
   "jest": {
     "preset": "react-native"
