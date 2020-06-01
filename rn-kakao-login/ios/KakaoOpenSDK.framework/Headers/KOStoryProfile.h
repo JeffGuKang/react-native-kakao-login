@@ -1,5 +1,5 @@
-/**
- * Copyright 2015-2016 Kakao Corp.
+/*
+ * Copyright 2015 Kakao Corp.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,69 +14,42 @@
  * limitations under the License.
  */
 
-/*!
- @header KOStoryProfile.h
- @abstract 카카오스토리 사용자 정보를 담고 있는 구조체.
- */
 #import <Foundation/Foundation.h>
 
-/*!
- @abstract KOStoryProfileBirthdayType 스토리 프로필의 생일 타입
- @constant KOStoryProfileBirthdayTypeSolar 양력
- @constant KOStoryProfileBirthdayTypeLunar 음력
- */
+/// 스토리 프로필의 생일 타입
 typedef NS_ENUM(NSInteger, KOStoryProfileBirthdayType) {
+    /// 양력
     KOStoryProfileBirthdayTypeSolar = 0,
+    /// 음력
     KOStoryProfileBirthdayTypeLunar = 1
 };
 
-/*!
- @class KOStoryProfile
- @abstract 카카오스토리 사용자 정보를 담고 있는 구조체.
- */
+/// 카카오스토리 사용자 정보를 담고 있는 구조체
 @interface KOStoryProfile : NSObject
 
-/*!
- * @property nickName
- * @abstract 카카오스토리 닉네임
- */
-@property(nonatomic, readonly) NSString *nickName;
-/*!
- * @property profileImageURL
- * @abstract 카카오스토리 프로필 이미지 URL
- */
+/// @abstract 카카오스토리 닉네임
+@property(nonatomic, readonly) NSString *nickname;
+
+/// @abstract 카카오스토리 프로필 이미지 URL
 @property(nonatomic, readonly) NSString *profileImageURL;
-/*!
- * @property thumbnailURL
- * @abstract 카카오스토리 프로필 이미지 썸네일 URL
- */
+
+/// @abstract 카카오스토리 프로필 이미지 썸네일 URL
 @property(nonatomic, readonly) NSString *thumbnailURL;
-/*!
- * @property bgImageURL
- * @abstract 카카오스토리 배경이미지 URL
- */
+
+/// @abstract 카카오스토리 배경이미지 URL
 @property(nonatomic, readonly) NSString *bgImageURL;
 
-/*!
- @property birthday
- @abstract 생일. MMdd
- */
+/// @abstract 생일. MMdd
 @property(nonatomic, readonly) NSString *birthday;
 
-/*!
- @property birthdayType
- @abstract 생일 타입. SOLAR 또는 LUNAR
- */
+/// @abstract 생일 타입. SOLAR 또는 LUNAR
 @property(nonatomic, readonly) KOStoryProfileBirthdayType birthdayType;
 
-/*!
- @property permalink
- @abstract 내 스토리를 방문할 수 있는 웹 page의 URL
- */
+/// @abstract 내 스토리를 방문할 수 있는 웹 page의 URL
 @property(nonatomic, readonly) NSString *permalink;
 
 
-- (id)initWithNickname:(NSString *)nickName
+- (id)initWithNickname:(NSString *)nickname
        profileImageURL:(NSString *)profileImageURL
           thumbnailURL:(NSString *)thumbnailURL
             bgImageURL:(NSString *)bgImageURL

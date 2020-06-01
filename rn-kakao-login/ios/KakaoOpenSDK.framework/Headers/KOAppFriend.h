@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2018 Kakao Corp.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,36 +14,29 @@
  * limitations under the License.
  */
 
-/*!
- * @header KOAppFriend.h
- * @brief 한 명의 앱 친구를 나타내는 클래스
- */
-
 #import <Foundation/Foundation.h>
+#import "KOSession.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-/*!
- * @class KOAppFriend
- * @brief 한 명의 앱 친구를 나타내는 클래스
- */
+/// 한 명의 앱 친구를 나타내는 클래스
 @interface KOAppFriend : NSObject
 
-/*!
- * @property ID
- * @abstract 친구의 사용자 아이디
- */
-@property (readonly, nullable) NSString *ID;
-/*!
- * @property nickname
- * @abstract 친구의 닉네임
- */
+/// @abstract 친구의 사용자 아이디
+@property (readonly) NSString *ID;
+
+/// @abstract 메시지를 전송하기 위한 고유 아이디
+/// @discussion 사용자의 계정 상태에 따라 이 정보는 바뀔 수 있습니다. 앱내의 사용자 식별자로 저장 사용되는 것은 권장하지 않습니다.
+@property (readonly) NSString *uuid;
+
+/// @abstract 친구의 닉네임
 @property (readonly, nullable) NSString *nickname;
-/*!
- * @property thumbnailImageURL
- * @abstract 썸네일 이미지 URL
- */
+
+/// @abstract 썸네일 이미지 URL
 @property (readonly, nullable) NSURL *thumbnailImageURL;
+
+/// @abstract 즐겨찾기 추가 여부
+@property (readonly) KOOptionalBoolean favorite;
 
 - (NSDictionary<NSString *, id> *)dictionary;
 + (instancetype)appFriendWithDictionary:(NSDictionary<NSString *, id> *)dictionary;

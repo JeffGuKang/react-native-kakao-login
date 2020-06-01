@@ -143,7 +143,7 @@ RCT_REMAP_METHOD(logout,
 			reject(@"RNKakao", @"userInfo error", error);
 		} else if (result) {
 			NSString *id = result.ID;
-			NSString *nickName = result.nickname;
+			NSString *nickname = result.nickname;
 			NSURL *profileImage = result.profileImageURL;
 			NSURL *profileImageThumbnail = result.thumbnailImageURL;
 			
@@ -157,7 +157,7 @@ RCT_REMAP_METHOD(logout,
 			[userInfo setValue:id forKey:@"id"];
 			[userInfo setValue:[KOSession sharedSession].token.accessToken forKey:@"accessToken"];
 			
-			if (nickName) [userInfo setValue:nickName forKey:@"nickName"];
+			if (nickname) [userInfo setValue:nickname forKey:@"nickname"];
 			if (email) [userInfo setValue:email forKey:@"email"];
 			if (profileImage) [userInfo setValue:profileImage.absoluteString forKey:@"profileImage"];
 			if (profileImageThumbnail) [userInfo setValue:profileImageThumbnail.absoluteString forKey:@"profileImageThumbnail"];

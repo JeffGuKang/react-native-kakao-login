@@ -81,7 +81,7 @@ PODS:
   - React-RCTWebSocket (0.60.4):
     - React-Core (= 0.60.4)
     - React-fishhook (= 0.60.4)
-  - RNKakao (2.0.0):
+  - RNKakaoLogin (2.0.3):
     - React-Core
   - yoga (0.60.4.React)
 
@@ -107,11 +107,11 @@ DEPENDENCIES:
   - React-RCTText (from `../node_modules/react-native/Libraries/Text`)
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - React-RCTWebSocket (from `../node_modules/react-native/Libraries/WebSocket`)
-  - RNKakao (from `../node_modules/rn-kakao-login`)
+  - RNKakaoLogin (from `../node_modules/rn-kakao-login`)
   - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - boost-for-react-native
 
 EXTERNAL SOURCES:
@@ -157,7 +157,7 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/Libraries/Vibration"
   React-RCTWebSocket:
     :path: "../node_modules/react-native/Libraries/WebSocket"
-  RNKakao:
+  RNKakaoLogin:
     :path: "../node_modules/rn-kakao-login"
   yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
@@ -185,9 +185,9 @@ SPEC CHECKSUMS:
   React-RCTText: e0f224898b13af9aa036ea7cb3d438daa68c1044
   React-RCTVibration: 0bea40cd51bd089bd591a8f74c86e91fdf2666c5
   React-RCTWebSocket: 163873f4cdd5f1058a9483443404fc3801581cb6
-  RNKakao: b508f54a44fdaa4d63b61c65d101c22fbd993784
+  RNKakaoLogin: 87d66898babdbe050fd70482115d8ff50b0c968f
   yoga: c2c050f6ae6e222534760cc82f559b89214b67e2
 
 PODFILE CHECKSUM: 4021b2102b13ddafae9cf19158e1c07bcd72982b
 
-COCOAPODS: 1.7.4
+COCOAPODS: 1.9.1

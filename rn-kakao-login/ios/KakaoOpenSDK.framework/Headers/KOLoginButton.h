@@ -1,5 +1,5 @@
-/**
- * Copyright 2015-2016 Kakao Corp.
+/*
+ * Copyright 2015 Kakao Corp.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,15 +14,11 @@
  * limitations under the License.
  */
 
-/*!
- @header KOLoginButton.h
- '카카오계정으로 로그인' 버튼
- */
 #import <UIKit/UIKit.h>
 
-/*!
- @abstract '카카오계정으로 로그인' 버튼
- */
+/// '카카오 로그인' 버튼
+/// @discussion storyboard나 xib 파일에서 버튼 클래스를 이 클래스로 지정하면 버튼 디자인이 적용됩니다.
+/// @warning 기능은 포함되어 있지 않으므로 샘플 프로젝트를 참고하여 로그인 메소드를 호출해야 합니다.
 @interface KOLoginButton : UIButton
 
 @end
