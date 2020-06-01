@@ -1,5 +1,5 @@
-/**
- * Copyright 2015-2016 Kakao Corp.
+/*
+ * Copyright 2015 Kakao Corp.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,29 +14,16 @@
  * limitations under the License.
  */
 
-/*!
- @header KakaoPushMessageObject.h
- Push 전송 시 보낼 메시지 객체
- */
 #import "KakaoPushMessagePropertyForApns.h"
 #import "KakaoPushMessagePropertyForGcm.h"
 
-/*!
- @class KakaoPushMessageObject
- @discussion Push 전송 시 보낼 메시지 객체
- */
+/// Push 전송 시 보낼 메시지 객체
 @interface KakaoPushMessageObject : NSObject
 
-/*!
- * @property forApns
- * @abstract iOS 기기에 보낼 메시지
- */
+/// @abstract iOS 기기에 보낼 메시지
 @property(nonatomic, readonly) KakaoPushMessagePropertyForApns *forApns;
 
-/*!
- * @property forGcm
- * @abstract Android 기기에 보낼 메시지
- */
+/// @abstract Android 기기에 보낼 메시지
 @property(nonatomic, readonly) KakaoPushMessagePropertyForGcm *forGcm;
 
 - (id)initWithApnsProperty:(KakaoPushMessagePropertyForApns *)forApns

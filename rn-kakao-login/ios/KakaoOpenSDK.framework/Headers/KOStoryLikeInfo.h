@@ -1,5 +1,5 @@
-/**
- * Copyright 2015-2018 Kakao Corp.
+/*
+ * Copyright 2015 Kakao Corp.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,48 +14,32 @@
  * limitations under the License.
  */
 
-/*!
- @header KOStoryLikeInfo.h
- @abstract 카카오스토리의 내스토리 좋아요 등 느낌(감정표현)에 대한 정보를 담고 있는 구조체.
- */
-
 #import <Foundation/Foundation.h>
 #import "KOStoryActorInfo.h"
 
-/*!
- @abstract KOStoryEmotion 느낌(감정표현)에 대한 정의.
- @constant KOStoryEmotionUnknown 알수 없는 형식
- @constant KOStoryEmotionLike 좋아요
- @constant KOStoryEmotionCool 멋져요
- @constant KOStoryEmotionHappy 기뻐요
- @constant KOStoryEmotionSad 슬퍼요
- @constant KOStoryEmotionCheerUp 힘내요
- */
+/// KOStoryEmotion 느낌(감정표현)에 대한 정의
 typedef NS_ENUM(NSInteger, KOStoryEmotion) {
+    /// 알수 없는 형식
     KOStoryEmotionUnknown = 0,
+    /// 좋아요
     KOStoryEmotionLike = 1,
+    /// 멋져요
     KOStoryEmotionCool = 2,
+    /// 기뻐요
     KOStoryEmotionHappy = 3,
+    /// 슬퍼요
     KOStoryEmotionSad = 4,
+    /// 힘내요
     KOStoryEmotionCheerUp = 5
 };
 
-/*!
- @class KOStoryLikeInfo
- @abstract 카카오스토리의 좋아요 등 느낌(감정표현)에 대한 정보를 담고 있는 구조체.
- */
+/// 카카오스토리의 좋아요 등 느낌(감정표현)에 대한 정보를 담고 있는 구조체
 @interface KOStoryLikeInfo : NSObject
 
-/*!
- @property emotion
- @abstract 느낌에 대한 정보. 예) 좋아요, 멋져요, 기뻐요, 슬퍼요, 힘내요
- */
+/// @abstract 느낌에 대한 정보. 예) 좋아요, 멋져요, 기뻐요, 슬퍼요, 힘내요
 @property(nonatomic, readonly) KOStoryEmotion emotion;
 
-/*!
- @property actor
- @abstract 느낌의 작성자
- */
+/// @abstract 느낌의 작성자
 @property(nonatomic, readonly) KOStoryActorInfo *actor;
 
 - (id)initWithEmotion:(KOStoryEmotion)emotion

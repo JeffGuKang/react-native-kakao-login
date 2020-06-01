@@ -1,5 +1,5 @@
-/**
- * Copyright 2015-2016 Kakao Corp.
+/*
+ * Copyright 2015 Kakao Corp.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,51 +14,31 @@
  * limitations under the License.
  */
 
-/*!
- @header
- 카카오 관련 이미지들
- */
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-/*!
- 카카오 관련 이미지들
- */
+/// 카카오 관련 이미지들
 @interface KOImages : NSObject
 
-/*!
- 버튼용 카카오 미니로고
- */
+/// 버튼용 카카오 미니로고
 + (UIImage *)kakaoLogoForButton;
 
-/*!
- 카카오 로고
- */
+/// 카카오 로고
 + (UIImage *)kakaoLogo;
 
-/*!
- 카카오톡 아이콘
- */
+/// 카카오톡 아이콘
 + (UIImage *)kakaoTalkIconForButton;
 
-/*!
- 카카오스토리 아이콘
- */
+/// 카카오스토리 아이콘
 + (UIImage *)kakaoStoryIconForButton;
 
-/*!
- 카카오계정 아이콘
- */
+/// 카카오계정 아이콘
 + (UIImage *)kakaoAccountIconForButton;
 
-/*!
- 로그인 선택취소 아이콘
- */
+/// 로그인 선택취소 아이콘
 + (UIImage *)kakaoLoginSelectCancelIconForButton;
 
-/*!
- 웹뷰용
- */
+// 웹뷰용
 + (UIImage *)webViewBackButton;
 
 + (UIImage *)webViewButton;

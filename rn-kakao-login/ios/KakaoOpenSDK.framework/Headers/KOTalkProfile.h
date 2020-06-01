@@ -1,5 +1,5 @@
-/**
- * Copyright 2015-2018 Kakao Corp.
+/*
+ * Copyright 2015 Kakao Corp.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,40 +14,21 @@
  * limitations under the License.
  */
 
-/*!
- @header KOTalkProfile.h
- 카카오톡 사용자 정보를 담고 있는 구조체.
- */
 #import <Foundation/Foundation.h>
 
-/*!
- @class KOTalkProfile
- @discussion 카카오톡 사용자 정보를 담고 있는 구조체.
- */
+/// 카카오톡 사용자 정보를 담고 있는 구조체
 @interface KOTalkProfile : NSObject
 
-/*!
- @property nickName
- @abstract 카카오톡 닉네임
- */
+/// @abstract 카카오톡 닉네임
 @property(nonatomic, readonly) NSString *nickName;
 
-/*!
- @property profileImageURL
- @abstract 카카오톡 프로필 이미지 URL
- */
+/// @abstract 카카오톡 프로필 이미지 URL
 @property(nonatomic, readonly) NSString *profileImageURL;
 
-/*!
- @property thumbnailURL
- @abstract 카카오톡 프로필 이미지 썸네일 URL
- */
+/// @abstract 카카오톡 프로필 이미지 썸네일 URL
 @property(nonatomic, readonly) NSString *thumbnailURL;
 
-/*!
- @property countryISO
- @abstract 카카오톡 국가 코드
- */
+/// @abstract 카카오톡 국가 코드
 @property(nonatomic, readonly) NSString *countryISO;
 
 

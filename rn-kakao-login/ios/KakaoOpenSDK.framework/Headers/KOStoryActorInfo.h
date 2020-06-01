@@ -1,5 +1,5 @@
-/**
- * Copyright 2015-2016 Kakao Corp.
+/*
+ * Copyright 2015 Kakao Corp.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,29 +14,15 @@
  * limitations under the License.
  */
 
-/*!
- @header KOStoryActorInfo.h
- 카카오스토리의 작성자 정보를 담고 있는 구조체.
- */
-
 #import <Foundation/Foundation.h>
 
-/*!
- @class KOStoryActorInfo
- @discussion 카카오스토리의 작성자 정보를 담고 있는 구조체.
- */
+/// 카카오스토리의 작성자 정보를 담고 있는 구조체
 @interface KOStoryActorInfo : NSObject <NSCopying>
 
-/*!
- @property profileThumbnailUrl
- @abstract 작성자의 썸네일에 대한 URL
- */
+/// @abstract 작성자의 썸네일에 대한 URL
 @property(nonatomic, readonly) NSString *profileThumbnailUrl;
 
-/*!
- @property displayName
- @abstract 작성자의 표시되는 이름
- */
+/// @abstract 작성자의 표시되는 이름
 @property(nonatomic, readonly) NSString *displayName;
 
 - (id)initWithProfileThumbnailUrl:(NSString *)profileThumbnailUrl
