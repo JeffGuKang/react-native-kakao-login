@@ -37,15 +37,12 @@ RCT_EXPORT_MODULE();
  Login or Signup
  @param authTypes array consists in KOAuthType.
  */
-RCT_REMAP_METHOD(loginWithAuthTypes,
-				 authTypes: (NSArray* )authTypes
+RCT_REMAP_METHOD(loginWithAllTypes,				 
 				 resolver:(RCTPromiseResolveBlock)resolve
 				 rejecter:(RCTPromiseRejectBlock)reject)
 {
 	dispatch_async(dispatch_get_main_queue(), ^{
 		[[KOSession sharedSession] close];
-		NSArray *auths = (authTypes != nil) ? authTypes : @[@(KOAuthTypeTalk), @(KOAuthTypeStory), @(KOAuthTypeAccount)];
-		//		- (void)openWithCompletionHandler:(KOSessionCompletionHandler)completionHandler authTypes:(NSArray<NSNumber *> *)authTypes;
 		[[KOSession sharedSession] openWithCompletionHandler:^(NSError *error) {
 			NSLog(@"MYLOG: openWithCompletionHandler");
 			
@@ -66,7 +63,7 @@ RCT_REMAP_METHOD(loginWithAuthTypes,
 				reject(@"RNKakao", @"login canceled", nil);
 				return;
 			}
-		} authTypes:auths];
+		} authType:KOAuthTypeTalk, KOAuthTypeStory, KOAuthTypeAccount, nil];
 	});
 }
 

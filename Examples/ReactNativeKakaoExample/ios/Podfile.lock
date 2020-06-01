@@ -81,7 +81,7 @@ PODS:
   - React-RCTWebSocket (0.60.4):
     - React-Core (= 0.60.4)
     - React-fishhook (= 0.60.4)
-  - RNKakaoLogin (2.0.3):
+  - RNKakaoLogin (2.1.0):
     - React-Core
   - yoga (0.60.4.React)
 
@@ -185,7 +185,7 @@ SPEC CHECKSUMS:
   React-RCTText: e0f224898b13af9aa036ea7cb3d438daa68c1044
   React-RCTVibration: 0bea40cd51bd089bd591a8f74c86e91fdf2666c5
   React-RCTWebSocket: 163873f4cdd5f1058a9483443404fc3801581cb6
-  RNKakaoLogin: 87d66898babdbe050fd70482115d8ff50b0c968f
+  RNKakaoLogin: e41453a9130bc52a38bb5a7f70f341932bc142c6
   yoga: c2c050f6ae6e222534760cc82f559b89214b67e2
 
 PODFILE CHECKSUM: 4021b2102b13ddafae9cf19158e1c07bcd72982b

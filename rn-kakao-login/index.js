@@ -14,7 +14,7 @@ export default ReactNativeKakao;
 
   ```
 
-  RNKakao.login()
+  RNKakao.login()   // or RNKakao.loginWithAllTypes()
   .then(result => {
     console.log("Result");
     console.log(result);
@@ -26,5 +26,5 @@ export default ReactNativeKakao;
     console.log("Error");
     console.log(error);
   })
-  ```
+  ``
 **/

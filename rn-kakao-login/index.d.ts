@@ -1,5 +1,13 @@
 export default class RNKakao {
+    /**
+     * Login through kakaotalk
+     */
     public static login(): Promise<KakaoUser>
+
+    /**
+     * Login with all possible types as kakaotalk, kakaostory and web
+     */
+    public static loginWithAllTypes(): Promise<KakaoUser>
 
     public static logout(): Promise<{}>
 

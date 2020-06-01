@@ -61,13 +61,24 @@ public class ReactNativeKakaoLogin {
     /**
      * Log in
      */
-    public void login(Promise promise) {
-        Log.d(LOG_TAG, "Login");
+    public void login(Promise promise) {        
         initialize();
         this.sessionCallback = new SessionCallback(promise);
         Session.getCurrentSession().clearCallbacks();
         Session.getCurrentSession().addCallback(sessionCallback);
         Session.getCurrentSession().open(AuthType.KAKAO_TALK, currentActivity); // KAKAO_ACCOUNT 정상 동작 확인
+    }
+
+    /**
+     * Log in with all types
+     */
+    public void loginWithAllTypes(Promise promise) {
+        Log.d(LOG_TAG, "loginWithAllTypes");        
+        initialize();
+        this.sessionCallback = new SessionCallback(promise);
+        Session.getCurrentSession().clearCallbacks();
+        Session.getCurrentSession().addCallback(sessionCallback);
+        Session.getCurrentSession().open(AuthType.KAKAO_LOGIN_ALL, currentActivity);
     }
 
     /**
@@ -218,10 +229,10 @@ public class ReactNativeKakaoLogin {
             return new ISessionConfig() {
 
                 // 로그인시 인증받을 타입을 지정한다. 지정하지 않을 시 가능한 모든 옵션이 지정된다.
-                 @Override
-                 public AuthType[] getAuthTypes() {
-                     return new AuthType[]{AuthType.KAKAO_TALK};
-                 }
+                //  @Override
+                //  public AuthType[] getAuthTypes() {
+                //      return new AuthType[]{AuthType.KAKAO_TALK};
+                //  }
 
                 @Override
                 public boolean isUsingWebviewTimer() {

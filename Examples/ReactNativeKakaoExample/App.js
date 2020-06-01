@@ -25,9 +25,17 @@ export default class ReactNativeKakaoExample extends Component {
     };
   }
 
-  kakaoLogin = async () => {
+  kakaoLogin = async (withAllTypes) => {
+    console.log('withAllTypes', withAllTypes);
+    let result;
+
     try {
-      const result = await RNKakao.login();
+      if (withAllTypes) {
+        result = await RNKakao.loginWithAllTypes();
+      } else {
+        result = await RNKakao.login();
+      }
+      console.log('result', result);
       this.setState({
         userInfo: JSON.stringify(result),
       });
@@ -65,7 +73,11 @@ export default class ReactNativeKakaoExample extends Component {
   }
 
   onPressLogin = () => {
-    this.kakaoLogin();
+    this.kakaoLogin(false);
+  }
+
+  onPressLoginWithAllTypes = () => {
+    this.kakaoLogin(true);
   }
 
   onPressLogout = () => {
@@ -96,6 +108,12 @@ export default class ReactNativeKakaoExample extends Component {
             source={KAKAO_BUTTON_IMG}
           />
         </TouchableOpacity>
+        <TouchableOpacity
+            style={[styles.button, { backgroundColor: '#ffe812', marginBottom: 10 }]}
+            onPress={this.onPressLoginWithAllTypes}
+          >
+            <Text style={[styles.buttonText]}>LoginWithAllTypes</Text>
+          </TouchableOpacity>
 
         <View style={styles.buttonContainer}>
           <TouchableOpacity

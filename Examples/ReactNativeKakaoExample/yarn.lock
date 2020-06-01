@@ -5516,7 +5516,7 @@ rimraf@~2.2.6:
   integrity sha1-5Dm+Kq7jJzIZUnMPmaiSnk/FBYI=
 
 "rn-kakao-login@file:../../rn-kakao-login":
-  version "2.0.3"
+  version "2.1.0"
 
 rsvp@^4.8.4:
   version "4.8.5"

@@ -70,6 +70,12 @@ public class ReactNativeKakaoModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
+  public void loginWithAllTypes(Promise promise) {
+    Log.d(MODULE_NAME, "loginWithAllTypes");
+    kakaoLogin.loginWithAllTypes(promise);
+  }
+
+  @ReactMethod
   public void logout(Promise promise) {
     kakaoLogin.logout(promise);
   }
