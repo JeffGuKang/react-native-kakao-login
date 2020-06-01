@@ -1,12 +1,12 @@
 {
   "name": "rn-kakao-login",
-  "version": "2.0.3",
+  "version": "2.1.0",
   "description": "Kakao login module(package) for React Native",
   "main": "index.js",
   "scripts": {
     "test": "jest",
     "lint": "eslint *.js **/*.js",
-    "release": "standard-version"
+    "release": "standard-version -t ''"
   },
   "keywords": [
     "react-native",
