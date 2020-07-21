@@ -17,7 +17,7 @@ export default class RNKakao {
 export interface KakaoUser {
     id: string
     accessToken: string
-    nickname: string | null
+    nickName: string | null
     email: string | null
     profileImage: string | null
     profileImageThumbnail: string | null
