@@ -1,3 +1,7 @@
+# DEPRECATED
+
+This library has been deprecated and is no longer maintained now. Please use https://github.com/react-native-seoul/react-native-kakao-login.
+
 # React Native Kakao Login(rn-kakao-login)
 
 Android: ![Android](https://build.appcenter.ms/v0.1/apps/6ef44ff8-32de-43c6-8e21-97017bcf405e/branches/master/badge)  
