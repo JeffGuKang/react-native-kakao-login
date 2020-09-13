@@ -1,6 +1,6 @@
 # DEPRECATED
 
-This library has been deprecated and is no longer maintained now. Please use https://github.com/react-native-seoul/react-native-kakao-login.
+This library has been deprecated and is no longer maintained now. Please use https://github.com/react-native-seoul/react-native-kakao-login instead.
 
 # React Native Kakao Login(rn-kakao-login)
 
