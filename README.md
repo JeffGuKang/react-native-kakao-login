@@ -2,6 +2,8 @@
 
 This library has been deprecated and is no longer maintained now. Please use https://github.com/react-native-seoul/react-native-kakao-login instead.
 
+![IMG_9520](https://user-images.githubusercontent.com/216363/93151883-132a7400-f738-11ea-8e05-95a0e905a0f1.GIF)
+
 # React Native Kakao Login(rn-kakao-login)
 
 Android: ![Android](https://build.appcenter.ms/v0.1/apps/6ef44ff8-32de-43c6-8e21-97017bcf405e/branches/master/badge)  
@@ -349,3 +351,7 @@ google console에서 앱 서명란에 들어가 SHA-1 인증서 지문을 구글
 ## Licence
 
 (MIT)
+
+## References
+
+- gif: [Inuyasa](https://www.viz.com/inuyasha)
